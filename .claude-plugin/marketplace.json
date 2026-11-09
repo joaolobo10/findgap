@@ -1,0 +1,15 @@
+{
+  "name": "findgap",
+  "description": "findgap: an evidence-based study skill that finds real knowledge gaps in any field.",
+  "owner": {
+    "name": "João Carlos Lobo S. Monteiro",
+    "url": "https://github.com/joaolobo10"
+  },
+  "plugins": [
+    {
+      "name": "findgap",
+      "source": "./",
+      "description": "Finds real knowledge gaps in any field with confidence-rated quizzes, the Understanding Ladder, a gap report and a spaced re-test roadmap."
+    }
+  ]
+}

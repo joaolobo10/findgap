@@ -45,8 +45,19 @@ The skill lives in `skills/findgap/`; everything else in the repo is packaging a
   contrasting fields, never a single default domain.
 
 ## Release checklist
-- [ ] `grep -n "\[verify" skills/findgap/references/evidence-base.md` returns nothing
-      before tagging v0.1.0 (every number and DOI confirmed against its source).
+Run every step, in order, before tagging. Do not tag until all pass.
+- [ ] **Validator passes:** `pip install skills-ref` then `agentskills validate skills/findgap`.
+- [ ] **Release grep is empty:** `grep -n "\[verify" skills/findgap/references/evidence-base.md`
+      returns nothing (every number, claim and DOI confirmed against its source).
+- [ ] **Quiz tests pass:** `node scripts/test-quiz.mjs`.
+- [ ] **Plugin manifest is valid:** `claude plugin validate .` ends with "Validation passed".
+- [ ] **Evals reviewed:** run the skill on realistic prompts from several fields and
+      languages, and review the transcripts against SKILL.md and the references.
+- [ ] **Versions match the tag:** `version` in `.claude-plugin/plugin.json` and
+      `metadata.version` in `SKILL.md` equal the tag without the `v`.
+- [ ] **Then tag:** `git tag vX.Y.Z && git push origin vX.Y.Z`. The Release workflow
+      re-runs the automated checks, builds `findgap.zip` (`node scripts/build-zip.mjs`
+      locally) and attaches it to the GitHub release.
 
 ## Local testing
 - `~/.claude/skills/findgap` links to `skills/findgap` in this repo; edits are picked up

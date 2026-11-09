@@ -1,0 +1,60 @@
+name: Release
+
+# Runs when a version tag is pushed (e.g. v0.1.0). Re-checks the release
+# checklist, builds findgap.zip (single top-level folder: findgap/) and
+# attaches it to a GitHub release for that tag.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skill (Agent Skills reference validator)
+        run: |
+          pip install "skills-ref==0.1.1"
+          agentskills validate skills/findgap
+
+      - name: Release grep (no unconfirmed evidence)
+        run: |
+          if grep -n "\[verify" skills/findgap/references/evidence-base.md; then
+            echo "::error::Unconfirmed [verify] items remain in evidence-base.md"
+            exit 1
+          fi
+
+      - name: Tag matches the declared versions
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          plugin_version=$(node -p "require('./.claude-plugin/plugin.json').version")
+          skill_version=$(sed -n 's/^  version: "\(.*\)"$/\1/p' skills/findgap/SKILL.md)
+          echo "tag=$tag plugin.json=$plugin_version SKILL.md=$skill_version"
+          test "$tag" = "$plugin_version" && test "$tag" = "$skill_version"
+
+      - name: Quiz template tests
+        run: node scripts/test-quiz.mjs
+
+      - name: Build findgap.zip
+        run: node scripts/build-zip.mjs
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/findgap.zip \
+            --title "findgap $GITHUB_REF_NAME" \
+            --generate-notes
