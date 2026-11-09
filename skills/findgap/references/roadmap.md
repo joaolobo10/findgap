@@ -20,7 +20,7 @@ Work on gaps in this order. When time is short, cut from the bottom.
 5. Known gaps and fragile topics of medium weight.
 6. Low-weight topics: sample them; skip them if the deadline is tight, and say so.
 
-Mastered topics need only their scheduled re-tests. Correct-but-unsure answers need no extra study: spaced retrieval alone builds the trust that is missing.
+Mastered topics need only their scheduled re-tests. Answers that were right but given with low confidence (1–2) need no extra study, only spaced retrieval practice (E1, E3).
 
 ## Technique per gap
 
@@ -29,13 +29,13 @@ Each gap type gets the technique the evidence supports for it. Describe the acti
 | Gap | What the learner does | Evidence |
 |---|---|---|
 | **Dangerous gap** | Sees the explicit contrast ("you believed X; it's Y, because…"). Explains the correct version back in their own words. Must re-test on a later day. | E9, E10 |
-| **Recognition only** | Closes the material, writes everything they remember, then checks and corrects it. Repeats on separate days. Self-made questions or flashcards are fine if they *answer* them, never just re-read them. | E1 |
+| **Recognition only** | Closes the material, writes everything they remember, then checks and corrects it. Repeats on separate days. Self-made questions or flashcards are fine if they *answer* them, never just re-read them. | E1, E3 |
 | **Surface knowledge** | Works through the mechanism by answering "why does this step happen?" and "what would change if…?" for each part. | E5, E6 |
 | **Rigid model** | Compares two or more examples from different contexts that share the same principle, lists what they have in common, then states the principle. | E13 |
 | **Declarative only** | Solves practice problems of the familiar type, checking each answer right away and understanding every error before the next one. | E1, E10 |
 | **Doesn't know when** | Practices mixed sets of easily confused problem types, where choosing the approach is part of the task. Names and corrects the specific misconception behind past errors. Do not mix when the goal is memorizing vocabulary or terminology. | E4, E10, E15 |
 | **Inert knowledge** | Compares cases from different contexts that share the principle, states the principle, then tries a new case. | E13, E14 |
-| **Not consolidated** | Retrieves it again from memory at increasing distances in time, with no review just before. | E3 |
+| **Not consolidated** | Retrieves it again from memory on separate days, with no review just before. | E3 |
 | **Fragile** | More retrieval practice, spaced out, with feedback. | E1, E3 |
 | **Not in materials** | Picks a source that covers it, ideally one named by the criterion. Claude can give a first explanation, but the learner should check key facts against that source. | — |
 

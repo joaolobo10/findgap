@@ -46,7 +46,7 @@ When a topic was only covered by the breadth quiz, with no ladder:
 
 The most severe condition wins. "Mastered (breadth only)" means the quiz found no problem, not that the topic reached its target rung. Topics with high weight still go through the ladder.
 
-When the ladder was run, its status-assignment rules take precedence over the quiz, with one exception: if the topic had a dangerous item (wrong, confidence 3–4), a same-day ladder pass can raise its status only to **fragile**. It becomes **mastered** only after the delayed re-test of that error passes (E9: corrected errors can return).
+When the ladder was run, its status-assignment rules take precedence over the quiz, with one exception: if the topic had a dangerous item (wrong, confidence 3–4), a same-day ladder pass can raise its status only to **fragile**. It moves past fragile only when the delayed re-test of that error passes, which makes it **confirmed** (rung 7). (E9: corrected errors can return.)
 
 ## Handling dangerous items
 

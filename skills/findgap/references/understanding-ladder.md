@@ -193,7 +193,7 @@ After the ladder on a topic, set its status in the gap log:
 
 If more than one row could apply, the most severe wins: dangerous gap > known gap > fragile > mastered.
 
-**Dangerous items cap the status.** If the topic had a dangerous item (wrong, confidence 3–4), in the quiz or earlier in the ladder, a same-day ladder pass can raise its status only to **fragile**. It becomes **mastered** only after the delayed re-test of that error passes (E9: corrected errors can return).
+**Dangerous items cap the status.** If the topic had a dangerous item (wrong, confidence 3–4), in the quiz or earlier in the ladder, a same-day ladder pass can raise its status only to **fragile**. It moves past fragile only when the delayed re-test of that error passes, which makes it **confirmed** (rung 7). (E9: corrected errors can return.)
 
 Log the highest rung passed, the rung of the stall, the gap type, the last confidence and the status. Also log every wrong answer rated 3–4 as its own row under *Dangerous gaps and errors*, with a re-test date.
 

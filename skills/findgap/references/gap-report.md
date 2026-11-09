@@ -39,7 +39,7 @@ If there are none, say so. That is a genuinely good sign.
 
 One table covering every topic tested:
 
-Describe rungs and target levels in plain words: recalling it, explaining it, comparing it to everyday life, using it, choosing between options, handling new cases, still knowing it days later.
+Describe rungs and target levels in plain words: recalling it, explaining it, explaining why it works, comparing it to everyday life, using it, choosing between options, judging a solution, handling new cases, still knowing it days later.
 
 | Topic | Status | Got as far as / needed | What it means | Next step |
 |---|---|---|---|---|
