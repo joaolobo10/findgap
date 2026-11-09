@@ -35,14 +35,14 @@ These rules follow the multiple-choice item-writing guidelines reviewed by Halad
 - Write it as a complete question. The learner should be able to answer it before seeing the options.
 - For Apply and above, use a short scenario: a patient, a codebase, a client, a site, a historical situation.
 - No clues in the stem: no grammatical hints, no word repeated only in the correct option.
-- Avoid negatives ("which is NOT…"). If one is unavoidable, highlight the **NOT**.
+- Avoid negatives ("which is NOT…"). If one is unavoidable, highlight the **NOT**. (findgap house rule.)
 
 ### The options
 
 - **3 or 4 options**, with exactly one best answer.
 - **Every distractor maps to a named misconception or a plausible error** (E15). No filler options. Record the misconception for each distractor; it goes in the feedback and the gap report.
 - Make the options similar in length, structure and level of detail. The correct answer must not be the longest or the most qualified one.
-- No "all of the above" or "none of the above".
+- No "all of the above" or "none of the above". (The source guideline says to use "none of the above" carefully; never using it is a findgap choice.)
 - Vary the position of the correct answer across items.
 
 ### Where distractors come from (best first)

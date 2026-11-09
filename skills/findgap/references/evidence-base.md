@@ -212,15 +212,15 @@ These entries back how findgap *writes* questions, not how people learn. They ca
 **What it is.** Haladyna, Downing & Rodriguez (2002) validated a taxonomy of 31 multiple-choice item-writing guidelines for classroom assessment, using two sources of evidence: the consensus across 27 educational-testing textbooks, and 27 research studies and reviews published since 1990.
 
 **Guidelines findgap uses.**
-- Exactly one best answer per item **[verify]**
-- Only plausible distractors **[verify]**
-- Options of similar length **[verify]**
-- Avoid "all of the above" and "none of the above" **[verify]**
-- Avoid negatives in the stem; if one is unavoidable, make it stand out **[verify]**
+- Exactly one correct option per item. Items with no correct option, or more than one, are a common flaw (as reported in Casu & García-García, 2019).
+- Plausible distractors. The taxonomy includes "make all distractors plausible" and "write as many plausible distractors as you can" (as reported in Atalmış & Kingston, 2017).
+- Options of about equal length (as reported in Martínez et al., 2009; Casu & García-García, 2019).
+- Avoid "all of the above" (as reported in Martínez et al., 2009).
+- "None of the above": the taxonomy says to use it carefully (as reported in Atalmış & Kingston, 2017). findgap never uses it. That stricter rule is a findgap choice, not the guideline.
 
 **How findgap applies it.** These are the multiple-choice rules in `question-design.md`. What the distractors *contain* comes from misconceptions (E15).
 
-**Caveats.** These are conventions for item quality, not learning techniques.
+**Caveats.** These are conventions for item quality, not learning techniques. The guidelines rest mostly on consensus among item-writing experts rather than on experiments (as reported in Casu & García-García, 2019). Empirical checks are mixed: in an analysis of 630 university exam items, a different-length option and "all of the above" did not show the expected harm, while "none of the above" as the correct option made items harder (Martínez et al., 2009).
 
 ---
 
@@ -260,12 +260,14 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Adesope, O. O., Trevisan, D. A., & Sundararajan, N. (2017). Rethinking the use of tests: A meta-analysis of practice testing. *Review of Educational Research, 87*(3), 659–701. https://doi.org/10.3102/0034654316689306
 - Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist, 48*(2), 87–113. https://doi.org/10.1080/00461520.2013.775712
 - Anderson, L. W., & Krathwohl, D. R. (Eds.). (2001). *A taxonomy for learning, teaching, and assessing: A revision of Bloom's taxonomy of educational objectives.* Longman.
+- Atalmış, E. H., & Kingston, N. M. (2017). Three, four, and none of the above options in multiple-choice items. *Turkish Journal of Education, 6*(4), 143–157. https://doi.org/10.19128/turje.333687
 - Barnett, S. M., & Ceci, S. J. (2002). When and where do we apply what we learn? A taxonomy for far transfer. *Psychological Bulletin, 128*(4), 612–637. https://doi.org/10.1037/0033-2909.128.4.612
 - Bisra, K., Liu, Q., Nesbit, J. C., Salimi, F., & Winne, P. H. (2018). Inducing self-explanation: A meta-analysis. *Educational Psychology Review, 30*, 703–725. https://doi.org/10.1007/s10648-018-9434-x
 - Bloom, B. S. (1984). The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring. *Educational Researcher, 13*(6), 4–16. https://doi.org/10.3102/0013189X013006004
 - Brunmair, M., & Richter, T. (2019). Similarity matters: A meta-analysis of interleaved learning and its moderators. *Psychological Bulletin, 145*(11), 1029–1052. https://doi.org/10.1037/bul0000209
 - Butler, A. C., Fazio, L. K., & Marsh, E. J. (2011). The hypercorrection effect persists over a week, but high-confidence errors return. *Psychonomic Bulletin & Review, 18*, 1238–1244. https://doi.org/10.3758/s13423-011-0173-y
 - Butterfield, B., & Metcalfe, J. (2001). Errors committed with high confidence are hypercorrected. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 27*(6), 1491–1494. https://doi.org/10.1037/0278-7393.27.6.1491
+- Casu, G., & García-García, C. (2019). Differential length and overlap with the stem in multiple-choice item options: A pilot experiment. *Psicología Educativa, 25*(1), 43–48. https://doi.org/10.5093/psed2018a20
 - Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin, 132*(3), 354–380. https://doi.org/10.1037/0033-2909.132.3.354
 - Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. *Psychological Science in the Public Interest, 14*(1), 4–58. https://doi.org/10.1177/1529100612453266
 - Fraundorf, S. H., Caddick, Z. A., Nokes-Malach, T. J., & Rottman, B. M. (2023). Cognitive perspectives on maintaining physicians' medical expertise: IV. Best practices and open questions in using testing to enhance learning and retention. *Cognitive Research: Principles and Implications, 8*, 53. https://doi.org/10.1186/s41235-023-00508-8
@@ -277,6 +279,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Krathwohl, D. R. (2002). A revision of Bloom's taxonomy: An overview. *Theory Into Practice, 41*(4), 212–218. https://doi.org/10.1207/s15430421tip4104_2
 - Kulik, C.-L. C., Kulik, J. A., & Bangert-Drowns, R. L. (1990). Effectiveness of mastery learning programs: A meta-analysis. *Review of Educational Research, 60*(2), 265–299. https://doi.org/10.3102/00346543060002265
 - Latimier, A., Peyre, H., & Ramus, F. (2021). A meta-analytic review of the benefit of spacing out retrieval practice episodes on retention. *Educational Psychology Review, 33*, 959–987. https://doi.org/10.1007/s10648-020-09572-8
+- Martínez, R. J., Moreno, R., Martín, I., & Trigo, M. E. (2009). Evaluation of five guidelines for option development in multiple-choice item-writing. *Psicothema, 21*(2), 326–330. https://www.psicothema.com/pdf/3634.pdf
 - Moreira, B. F. T., Pinto, T. S. S., Starling, D. S. V., & Jaeger, A. (2019). Retrieval practice in classroom settings: A review of applied research. *Frontiers in Education, 4*, 5. https://doi.org/10.3389/feduc.2019.00005
 - Murray, E., Horner, A. J., & Göbel, S. M. (2025). A meta-analytic review of the effectiveness of spacing and retrieval practice for mathematics learning. *Educational Psychology Review, 37*, 75. https://doi.org/10.1007/s10648-025-10035-1
 - Nelson, T. O., & Dunlosky, J. (1991). When people's judgments of learning (JOLs) are extremely accurate at predicting subsequent recall: The "delayed-JOL effect." *Psychological Science, 2*(4), 267–271. https://doi.org/10.1111/j.1467-9280.1991.tb00147.x
