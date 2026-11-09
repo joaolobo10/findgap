@@ -28,10 +28,10 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 **What the research says.** Pulling information out of memory strengthens it more than re-reading it. In Roediger & Karpicke (2006), re-studying won on a test 5 minutes later, but testing won clearly after 2 days and 1 week. Re-studying also made students *more confident* while producing worse retention.
 
 **Key numbers.**
-- Rowland (2014): *g* = 0.50 **[verify]** versus restudy (159 effect sizes **[verify]**, 61 studies **[verify]**, mostly lab).
-- Adesope, Trevisan & Sundararajan (2017): *g* ≈ 0.61–0.70 **[verify]** (272 effect sizes **[verify]**, 118 articles **[verify]**). Classroom studies *g* = 0.67 **[verify]**, similar to lab.
-- Yang et al. (2021), classroom quizzing only: *g* ≈ 0.50, ≈ 0.43 **[verify]** after publication-bias correction.
-- Multiple-choice practice worked at least as well as recall formats in Adesope et al. **[verify]** Feedback generally increases the benefit.
+- Rowland (2014): *g* = 0.50 versus restudy, from laboratory research only (as reported in Fraundorf et al., 2023; Greving & Richter, 2018).
+- Adesope, Trevisan & Sundararajan (2017): *g* = 0.70 (as reported in Fraundorf et al., 2023). Classroom studies: *g* = 0.67 (as reported in Greving & Richter, 2018).
+- Yang et al. (2021), classroom quizzing only: *g* ≈ 0.50.
+- Question format: testing beat restudy for every test format in Adesope et al. (as reported in Fraundorf et al., 2023). Multiple-choice practice produced larger effects than short-answer practice there, while Rowland found the opposite (as reported in Greving & Richter, 2018). Feedback generally increases the benefit.
 
 **How findgap applies it.** Every diagnostic step is a retrieval attempt: closed-book, from memory, before the user sees the answer. Quizzes are learning events, not only measurements.
 
@@ -54,8 +54,8 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 **What the research says.** Spreading study over separate sessions beats cramming the same amount into one. Cepeda et al. (2006) reviewed 839 assessments from 317 experiments. The best gap between sessions *grows as the time until the test grows*.
 
 **Key numbers.**
-- Latimier, Peyre & Ramus (2021): spaced retrieval beat massed retrieval, *g* = 0.74 **[verify]** (29 studies **[verify]**).
-- Same study: expanding intervals were **not** better than evenly spaced ones (*g* = 0.034 **[verify]**).
+- Latimier, Peyre & Ramus (2021): spaced retrieval beat massed retrieval, *g* = 0.74 (29 studies).
+- Same study: expanding intervals were **not** better than evenly spaced ones (*g* ≈ 0.03, not significant).
 - Mathematics specifically: smaller but robust effect, *g* = 0.28 (Murray et al., 2025).
 
 **How findgap applies it.** The roadmap schedules re-tests over days and weeks, with gaps scaled to the user's deadline. Even or expanding schedules are both acceptable. Do not over-engineer the intervals.
@@ -78,7 +78,7 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 
 ## E5. Self-explanation — Grade A/B
 
-**What the research says.** Prompting learners to explain *why* and *how*, generating the causal links themselves, improves understanding and application. Bisra et al. (2018): *g* = 0.55 across 64 research reports (~5,900 learners). The effect held across subjects and when time on task was controlled. Question-form prompts ("Why does…?") performed well.
+**What the research says.** Prompting learners to explain *why* and *how*, generating the causal links themselves, improves understanding and application. Bisra et al. (2018): *g* = 0.55 across 64 research reports (~5,900 learners). The effect held across subjects. When self-explanation took no more time than the comparison activity, the effect was smaller (*g* = 0.41, only 5 effect sizes). Prompt formats (questions, instructions and others) did not differ significantly.
 
 **How findgap applies it.** This is the core of the **Explain** rung: the user explains in their own words, from memory, and Claude prompts for the reasoning behind each step.
 
@@ -146,8 +146,8 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 
 **What the research says.** Learners move on only after meeting a defined criterion. Below the criterion, they get corrective work and a parallel re-test.
 - Bloom (1984): group mastery learning ≈ 1 SD over conventional teaching. Tutoring plus mastery ≈ 2 SD (the "2 sigma problem").
-- Kulik, Kulik & Bangert-Drowns (1990): 108 controlled evaluations, average effect ≈ 0.52 **[verify]**, larger for weaker students.
-- Bloom's typical criterion was 80–90% correct **[verify]** on the unit's formative test.
+- Kulik, Kulik & Bangert-Drowns (1990): 108 controlled evaluations showed positive effects on exam performance, larger for weaker students. Self-paced programs often reduced course completion in college.
+- Bloom's studies used a mastery standard of about 80% correct.
 
 **How findgap applies it.** "Ready for X" is criterion-referenced, never a feeling. It requires passing the threshold on the user's knowledge map **and** passing again on a delayed re-test (E3).
 
@@ -234,7 +234,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 
 ## References
 
-> All DOIs below were confirmed against Crossref. Numbers in the E-sections that are not yet confirmed against the source carry an inline verify tag; all must be resolved before release.
+> All DOIs below were confirmed against Crossref. Any number or claim not yet confirmed against its source carries an inline verify tag in the E-sections; all must be resolved before release. "As reported in" marks a figure confirmed through a peer-reviewed secondary source.
 
 - Adesope, O. O., Trevisan, D. A., & Sundararajan, N. (2017). Rethinking the use of tests: A meta-analysis of practice testing. *Review of Educational Research, 87*(3), 659–701. https://doi.org/10.3102/0034654316689306
 - Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist, 48*(2), 87–113. https://doi.org/10.1080/00461520.2013.775712
@@ -247,6 +247,8 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Butterfield, B., & Metcalfe, J. (2001). Errors committed with high confidence are hypercorrected. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 27*(6), 1491–1494. https://doi.org/10.1037/0278-7393.27.6.1491
 - Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin, 132*(3), 354–380. https://doi.org/10.1037/0033-2909.132.3.354
 - Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. *Psychological Science in the Public Interest, 14*(1), 4–58. https://doi.org/10.1177/1529100612453266
+- Fraundorf, S. H., Caddick, Z. A., Nokes-Malach, T. J., & Rottman, B. M. (2023). Cognitive perspectives on maintaining physicians' medical expertise: IV. Best practices and open questions in using testing to enhance learning and retention. *Cognitive Research: Principles and Implications, 8*, 53. https://doi.org/10.1186/s41235-023-00508-8
+- Greving, S., & Richter, T. (2018). Examining the testing effect in university teaching: Retrievability and question format matter. *Frontiers in Psychology, 9*, 2412. https://doi.org/10.3389/fpsyg.2018.02412
 - Hestenes, D., Wells, M., & Swackhamer, G. (1992). Force concept inventory. *The Physics Teacher, 30*(3), 141–158. https://doi.org/10.1119/1.2343497
 - Kobayashi, K. (2019). Learning by preparing-to-teach and teaching: A meta-analysis. *Japanese Psychological Research, 61*(3), 192–203. https://doi.org/10.1111/jpr.12221
 - Kornell, N., Hays, M. J., & Bjork, R. A. (2009). Unsuccessful retrieval attempts enhance subsequent learning. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 35*(4), 989–998. https://doi.org/10.1037/a0015729

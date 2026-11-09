@@ -29,8 +29,13 @@ The skill lives in `skills/findgap/`; everything else in the repo is packaging a
 - Respect the **"Do not use"** list in `evidence-base.md`: nothing on it may appear in
   the skill as a recommended practice. Removing an item from that list needs new
   evidence cited in the same change.
-- Numbers (effect sizes, study counts) must match the cited source. Mark unconfirmed
-  DOIs or numbers with **[verify]** until checked against Crossref or the paper.
+- Numbers (effect sizes, study counts) must match the cited source.
+- Qualitative claims ("errors return", "rated moderate utility") also need a citation
+  whose abstract or full text actually supports them.
+- A figure confirmed only through a peer-reviewed secondary source is cited inline as
+  "(as reported in Author, Year)", and that secondary source goes in the reference list.
+- **[verify]** marks anything unconfirmed — number, claim or DOI — inline, right next to
+  it, until checked against Crossref, the abstract or the full text.
 - Summarize sources in our own words — never copy text from papers.
 - No learning styles or other debunked methods (e.g. VAK matching, "left/right brain"
   learners, the learning pyramid / "we remember 10% of what we read").
