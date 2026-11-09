@@ -28,6 +28,8 @@ The **quiz artifact uses single-best-answer items only**, so it can score them a
 
 ## Writing multiple-choice items
 
+These rules follow the multiple-choice item-writing guidelines reviewed by Haladyna, Downing & Rodriguez (2002) (evidence base, A1). Distractor content comes from misconceptions (E15).
+
 ### The stem
 
 - Write it as a complete question. The learner should be able to answer it before seeing the options.
@@ -69,9 +71,9 @@ The **quiz artifact uses single-best-answer items only**, so it can score them a
 After the learner answers and rates:
 
 - **Wrong:** the correct answer, why it is correct, and why their choice was tempting (name the misconception). 2–4 lines.
-- **Wrong and certain:** add the explicit contrast: "You were certain of X; it's Y, because…".
-- **Right but unsure:** confirm it and say *why* it's right, so the next retrieval is easier.
-- **Right and certain:** one line, no need to elaborate.
+- **Wrong with high confidence (3–4):** add the explicit contrast: "You were certain of X; it's Y, because…".
+- **Right with low confidence (1–2):** confirm it and say *why* it's right, so the next retrieval is easier.
+- **Right with high confidence (3–4):** one line, no need to elaborate.
 
 ## Quiz data format
 

@@ -203,6 +203,27 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 
 ---
 
+## Assessment conventions (not learning techniques)
+
+These entries back how findgap *writes* questions, not how people learn. They carry no effect-size claims.
+
+### A1. Multiple-choice item-writing guidelines
+
+**What it is.** Haladyna, Downing & Rodriguez (2002) validated a taxonomy of 31 multiple-choice item-writing guidelines for classroom assessment, using two sources of evidence: the consensus across 27 educational-testing textbooks, and 27 research studies and reviews published since 1990.
+
+**Guidelines findgap uses.**
+- Exactly one best answer per item **[verify]**
+- Only plausible distractors **[verify]**
+- Options of similar length **[verify]**
+- Avoid "all of the above" and "none of the above" **[verify]**
+- Avoid negatives in the stem; if one is unavoidable, make it stand out **[verify]**
+
+**How findgap applies it.** These are the multiple-choice rules in `question-design.md`. What the distractors *contain* comes from misconceptions (E15).
+
+**Caveats.** These are conventions for item quality, not learning techniques.
+
+---
+
 ## The Understanding Ladder → evidence map
 
 | Rung | What the user does | Evidence |
@@ -234,7 +255,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 
 ## References
 
-> All DOIs below were confirmed against Crossref. Any number or claim not yet confirmed against its source carries an inline verify tag in the E-sections; all must be resolved before release. "As reported in" marks a figure confirmed through a peer-reviewed secondary source.
+> All DOIs below were confirmed against Crossref. Any number or claim not yet confirmed against its source carries an inline verify tag in the E- and A-sections; all must be resolved before release. "As reported in" marks a figure confirmed through a peer-reviewed secondary source.
 
 - Adesope, O. O., Trevisan, D. A., & Sundararajan, N. (2017). Rethinking the use of tests: A meta-analysis of practice testing. *Review of Educational Research, 87*(3), 659–701. https://doi.org/10.3102/0034654316689306
 - Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist, 48*(2), 87–113. https://doi.org/10.1080/00461520.2013.775712
@@ -249,6 +270,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. *Psychological Science in the Public Interest, 14*(1), 4–58. https://doi.org/10.1177/1529100612453266
 - Fraundorf, S. H., Caddick, Z. A., Nokes-Malach, T. J., & Rottman, B. M. (2023). Cognitive perspectives on maintaining physicians' medical expertise: IV. Best practices and open questions in using testing to enhance learning and retention. *Cognitive Research: Principles and Implications, 8*, 53. https://doi.org/10.1186/s41235-023-00508-8
 - Greving, S., & Richter, T. (2018). Examining the testing effect in university teaching: Retrievability and question format matter. *Frontiers in Psychology, 9*, 2412. https://doi.org/10.3389/fpsyg.2018.02412
+- Haladyna, T. M., Downing, S. M., & Rodriguez, M. C. (2002). A review of multiple-choice item-writing guidelines for classroom assessment. *Applied Measurement in Education, 15*(3), 309–333. https://doi.org/10.1207/S15324818AME1503_5
 - Hestenes, D., Wells, M., & Swackhamer, G. (1992). Force concept inventory. *The Physics Teacher, 30*(3), 141–158. https://doi.org/10.1119/1.2343497
 - Kobayashi, K. (2019). Learning by preparing-to-teach and teaching: A meta-analysis. *Japanese Psychological Research, 61*(3), 192–203. https://doi.org/10.1111/jpr.12221
 - Kornell, N., Hays, M. J., & Bjork, R. A. (2009). Unsuccessful retrieval attempts enhance subsequent learning. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 35*(4), 989–998. https://doi.org/10.1037/a0015729

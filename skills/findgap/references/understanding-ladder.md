@@ -23,7 +23,7 @@ Every rung is judged as one of:
 ### Allowed shortcuts
 
 - **Fast lane:** if a rung 1 explanation is already precise and causal, merge rung 2 into a single hard probe.
-- **Start higher:** if the breadth quiz already showed correct, confident answers at the Apply level on this topic, you may start at rung 4. Run rung 1 later if the goal requires explaining (teaching, interviews, oral exams).
+- **Start higher:** if the breadth quiz already showed correct, high-confidence answers at the Apply level on this topic, you may start at rung 4. Run rung 1 later if the goal requires explaining (teaching, interviews, oral exams).
 - **Tacit knowledge:** if the learner stalls at Explain but says they use it in practice, run rung 4 (Apply) before concluding. If they pass Apply, log *can do, can't explain*. This matters only when the goal requires explaining.
 
 ## The rungs
@@ -192,6 +192,8 @@ After the ladder on a topic, set its status in the gap log:
 | Passed rung 7 | **confirmed** |
 
 If more than one row could apply, the most severe wins: dangerous gap > known gap > fragile > mastered.
+
+**Dangerous items cap the status.** If the topic had a dangerous item (wrong, confidence 3–4), in the quiz or earlier in the ladder, a same-day ladder pass can raise its status only to **fragile**. It becomes **mastered** only after the delayed re-test of that error passes (E9: corrected errors can return).
 
 Log the highest rung passed, the rung of the stall, the gap type, the last confidence and the status. Also log every wrong answer rated 3–4 as its own row under *Dangerous gaps and errors*, with a re-test date.
 
