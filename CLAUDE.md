@@ -22,6 +22,15 @@ The skill lives in `skills/findgap/`; everything else in the repo is packaging a
 ## Evidence
 - Every learning technique referenced anywhere in the skill must be backed by a citation
   in `references/evidence-base.md`.
+- A new technique requires a new E-entry (`## E<n>. <name> — Grade <A|B|C>`) in
+  `evidence-base.md` *before* it is used anywhere else in the skill: what the research
+  says, key numbers, how findgap applies it, caveats, plus the full reference with DOI.
+- Update the Understanding Ladder → evidence map when a rung's evidence changes.
+- Respect the **"Do not use"** list in `evidence-base.md`: nothing on it may appear in
+  the skill as a recommended practice. Removing an item from that list needs new
+  evidence cited in the same change.
+- Numbers (effect sizes, study counts) must match the cited source. Mark unconfirmed
+  DOIs or numbers with **[verify]** until checked against Crossref or the paper.
 - Summarize sources in our own words — never copy text from papers.
 - No learning styles or other debunked methods (e.g. VAK matching, "left/right brain"
   learners, the learning pyramid / "we remember 10% of what we read").
