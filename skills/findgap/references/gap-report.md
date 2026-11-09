@@ -39,11 +39,13 @@ If there are none, say so. That is a genuinely good sign.
 
 One table covering every topic tested:
 
-| Topic | Status | Reached / target | What it means | Next step |
+Describe rungs and target levels in plain words: recalling it, explaining it, comparing it to everyday life, using it, choosing between options, handling new cases, still knowing it days later.
+
+| Topic | Status | Got as far as / needed | What it means | Next step |
 |---|---|---|---|---|
-| T1.1 … | dangerous gap | Explain / Analyze | You felt sure, but the core idea was off | Correct the misconception, re-test on [date] |
-| T2.1 … | fragile | Apply / Apply | You got there, but weren't sure and needed a hint | More practice recalling it without help |
-| T3.2 … | mastered | Discriminate / Analyze | Solid; confirm it later | Re-test on [date] |
+| T1.1 … | dangerous gap | explaining it / choosing between options | You felt sure, but the core idea was off | Correct the misconception, re-test on [date] |
+| T2.1 … | fragile | using it / using it | You got there, but weren't sure and needed a hint | More practice recalling it without help |
+| T3.2 … | mastered | choosing between options / choosing between options | Solid; confirm it later | Re-test on [date] |
 
 List untested topics separately, with the share of the map's weight they represent.
 

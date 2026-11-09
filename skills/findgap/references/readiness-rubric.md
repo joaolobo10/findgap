@@ -15,9 +15,11 @@ How to answer "am I ready for X?" with evidence instead of a feeling. A verdict 
 
 A verdict needs enough of the map to have been tested. Give **no verdict** if any of these is true. Instead, say exactly what still needs testing.
 
-- Less than about 80% of the map's total weight has been tested.
+- Less than three quarters (75%) of the map's total weight has been tested.
 - Any `high`-weight or `safety-critical` topic is untested.
-- The diagnosis has fewer than ~10 items in total.
+- The diagnosis has fewer than about 10 items in total.
+
+These two thresholds are findgap rules of thumb for "enough evidence". They are unrelated to the 80% mastery standard below.
 
 A quick check can give a "first impression", explicitly labeled as such, but never one of the four verdicts.
 
@@ -46,7 +48,7 @@ Weight them: high = 3, medium = 2, low = 1.
 | **Close** | Score ≥ 60% · no unresolved dangerous gap in a safety-critical topic |
 | **Not yet** | Anything else |
 
-The 80% threshold follows the mastery standard of about 80% used in Bloom's studies (E11). The 60% threshold and the 3/2/1 weights are findgap rules of thumb. Say so if the learner asks.
+The 80% threshold is adapted from the mastery standard of about 80% used in Bloom's studies (E11). There, 80% was the share of correct answers on a unit test; findgap applies it to a weighted score of topic statuses. The 60% threshold and the 3/2/1 weights are findgap rules of thumb. Say so if the learner asks.
 
 ### Step 3: adjust for the goal type
 
