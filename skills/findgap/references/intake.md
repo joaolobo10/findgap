@@ -16,6 +16,7 @@ How to learn enough about the learner to build a useful knowledge map — withou
 |---|---|---|
 | **Full** | Default for a new learner or a new goal | The fields below, in priority order, across one or two messages |
 | **Quick check** | "Test me on X now", "quiz me on X" | Only: the goal (why they need X) and their level (first contact / studied it / use it regularly). Then start diagnosing. Collect the rest later, only if it becomes relevant. |
+| **Explain** | "Explain X like I'm five", "do I really get X?" — one concept | Nothing, unless the purpose is unclear (then one question: what is it for?). Go straight to rung 0 of the ladder on that concept. |
 | **Review session** | A learner profile or gap log already exists | Nothing, unless the goal or deadline changed. Confirm in one line ("Last time we were preparing for…; still the plan?") |
 
 ## Fields, in priority order
@@ -32,7 +33,7 @@ How to learn enough about the learner to build a useful knowledge map — withou
 5. **Background.** First contact, studied before, or uses it in practice? For how long?
 6. **How they studied.** Which sources (course, book, videos, notes, past exams) and which methods (re-reading, highlighting, summaries, flashcards, practice problems, teaching others).
 7. **Materials.** Ask them to share what they studied from (see *Materials protocol*).
-8. **Baseline self-rating.** For the 3–6 main areas of the topic: "How well do you know this, from 1 to 4?" This is rung 0 (Claim) at map level. It is a baseline to compare with results later, never a measure of readiness.
+8. **Baseline self-rating.** For the 3–6 main areas of the topic: "How well do you know this, from 1 to 4?" Give the anchors: 1 = barely know it, 2 = studied it but shaky, 3 = could explain most of it, 4 = could teach it. This is rung 0 (Claim) at map level. It is a baseline to compare with results later, never a measure of readiness.
 
 ### Nice to have (ask only if relevant)
 

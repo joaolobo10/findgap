@@ -22,7 +22,7 @@ Write in the learner's language. Never delete history: mark items as resolved in
 
 <!--
 Highest rung passed: 0 Claim · 1 Explain · 2 Probe · 3 Analogy · 4 Apply · 5 Discriminate · 6 Transfer · 7 Retain
-Status: untested | mastered | fragile | known gap | dangerous gap | confirmed (passed rung 7)
+Status: untested | mastered | fragile | known gap | dangerous gap | confirmed (passed rung 7) | out of scope
 -->
 
 | ID | Highest rung passed | Stalled at | Gap type | Last confidence | Status | Next re-test |
@@ -47,4 +47,4 @@ Status: untested | mastered | fragile | known gap | dangerous gap | confirmed (p
 
 | Date | Mode | Topics | Key findings |
 |---|---|---|---|
-| | full / quick check / review / explain | | |
+| | full / quick check / review session / explain | | |

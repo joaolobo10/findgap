@@ -75,7 +75,7 @@ The core of findgap. For a given topic, climb rung by rung. **The rung where the
 | 0 | Claim | Rate how well they understand it (before anything else) | — (baseline for calibration) |
 | 1 | Explain | Explain it from memory, in their own words. Variant: explain it to you playing a curious 10-year-old who asks follow-ups | **Recognition only:** familiar, but not retrievable |
 | 2 | Probe | Answer why/how follow-ups until the explanation holds or breaks. Then re-rate their understanding | **Surface knowledge:** words without a causal model |
-| 3 | Analogy | Map it to an everyday example, then say where the analogy breaks | **Fragile model:** understanding tied to one framing |
+| 3 | Analogy | Map it to an everyday example, then say where the analogy breaks | **Rigid model:** understanding tied to one framing |
 | 4 | Apply | Solve a familiar-type problem | **Declarative only:** knows about it, can't do it |
 | 5 | Discriminate | Pick which concept fits a situation, or spot the error in a flawed solution | **Doesn't know when:** can do it, can't recognize when it applies |
 | 6 | Transfer | Handle a case unlike anything they studied | **Inert knowledge:** works only in the studied format |
