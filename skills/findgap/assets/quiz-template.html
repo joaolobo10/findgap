@@ -1,11 +1,523 @@
 <!doctype html>
+<!--
+  findgap quiz template.
+  CLAUDE: replace ONLY the JSON inside the script element whose id is "quiz-data"
+  (further down). Do not edit anything else in this file.
+  Data format: references/question-design.md ("Quiz data format").
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>findgap quiz</title>
+<style>
+:root {
+  --bg: #f7f6f2; --card: #ffffff; --text: #1f2328; --muted: #5d636b; --line: #dcd9d0;
+  --accent: #2f6f73; --accent-text: #ffffff; --focus: #1f5fbf;
+  --ok-bg: #e7f3ec; --ok-line: #3c8a5f; --warn-bg: #fdf3e1; --warn-line: #b7791f;
+  --radius: 12px; color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17191c; --card: #212429; --text: #e8e6e1; --muted: #a5abb3; --line: #3a3f46;
+    --accent: #6fb3b8; --accent-text: #10201f; --focus: #8ab4ff;
+    --ok-bg: #1d3328; --ok-line: #6fbf8f; --warn-bg: #3a2f1a; --warn-line: #e0b05c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 42rem; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.35rem; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 0 0 12px; }
+.progress { color: var(--muted); font-size: .95rem; margin: 0 0 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+.stem { font-size: 1.08rem; margin: 0 0 16px; outline: none; }
+fieldset { border: 0; margin: 0 0 16px; padding: 0; }
+legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
+.choice { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; margin-bottom: 8px;
+  border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: border-color .15s, background-color .15s; }
+.choice:hover { border-color: var(--accent); }
+.choice input { margin-top: 4px; accent-color: var(--accent); }
+.choice.locked { cursor: default; }
+.choice.is-correct { background: var(--ok-bg); border-color: var(--ok-line); }
+.choice.is-wrong { background: var(--warn-bg); border-color: var(--warn-line); }
+.tag { font-size: .85rem; color: var(--muted); margin-left: 6px; }
+.conf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.conf .choice { flex-direction: column; align-items: center; text-align: center; gap: 2px; margin: 0; }
+.conf .choice input { margin: 0; }
+button { font: inherit; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-text); cursor: pointer; }
+button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.choice:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+.actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.hint { color: var(--muted); font-size: .85rem; margin: 12px 0 0; }
+.feedback { border-left: 4px solid var(--line); padding: 12px 14px; border-radius: 8px; margin: 0 0 16px; }
+.feedback.ok { border-color: var(--ok-line); background: var(--ok-bg); }
+.feedback.warn { border-color: var(--warn-line); background: var(--warn-bg); }
+.feedback p { margin: 0 0 6px; }
+.feedback p:last-child { margin-bottom: 0; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { border: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: top; }
+td small { display: block; color: var(--muted); }
+ul { padding-left: 20px; margin: 0; }
+pre { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px;
+  overflow-x: auto; font: .9rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre; }
+.status { color: var(--muted); font-size: .9rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) { .conf { grid-template-columns: repeat(2, 1fr); } .card { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+</style>
 </head>
 <body>
-<!-- TODO: Self-contained HTML quiz template (questions + confidence ratings, no external dependencies) that the skill fills in for interactive practice. -->
+<main id="app" aria-labelledby="quiz-title"></main>
+<div id="live" class="visually-hidden" aria-live="polite"></div>
+
+<script type="application/json" id="quiz-data">
+{
+  "title": "Demo — mixed-field diagnostic",
+  "language": "en",
+  "items": [
+    {
+      "id": "Q1",
+      "topic": "T1.1",
+      "level": "Understand",
+      "stem": "A patient on warfarin starts a drug that strongly inhibits the liver enzyme that clears warfarin. What is the most likely effect?",
+      "options": [
+        { "id": "A", "text": "Warfarin levels fall, raising the risk of clots.", "correct": false, "misconception": "Confuses enzyme inhibition with enzyme induction" },
+        { "id": "B", "text": "Warfarin levels rise, raising the risk of bleeding.", "correct": true, "misconception": null },
+        { "id": "C", "text": "Nothing changes, because the enzyme only affects how the drug is absorbed.", "correct": false, "misconception": "Mixes up metabolism (clearance) with absorption" }
+      ],
+      "explanation": "Inhibiting the enzyme that clears a drug slows its removal, so blood levels build up. For an anticoagulant, higher levels mean a higher bleeding risk.",
+      "source": "Demo item"
+    },
+    {
+      "id": "Q2",
+      "topic": "T2.1",
+      "level": "Apply",
+      "stem": "A program looks up records by ID thousands of times in a list of 100,000 records. Which change speeds up the lookups the most?",
+      "options": [
+        { "id": "A", "text": "Sort the list once, then keep scanning it from the start.", "correct": false, "misconception": "Thinks sorting alone speeds up a scan that still checks items one by one" },
+        { "id": "B", "text": "Rewrite the loop with a faster loop construct.", "correct": false, "misconception": "Tunes the loop instead of changing how much work each lookup does" },
+        { "id": "C", "text": "Store the records in a hash map keyed by ID.", "correct": true, "misconception": null }
+      ],
+      "explanation": "A hash map finds a key in roughly constant time, while scanning a list grows with its length. Changing the data structure removes most of the work per lookup.",
+      "source": "Demo item"
+    },
+    {
+      "id": "Q3",
+      "topic": "T3.1",
+      "level": "Understand",
+      "stem": "Why is the printing press often linked to the fast spread of the Protestant Reformation in the 16th century?",
+      "options": [
+        { "id": "A", "text": "It made pamphlets and translated texts cheap and quick to copy, so ideas spread beyond church control.", "correct": true, "misconception": null },
+        { "id": "B", "text": "Martin Luther invented it to publish his own writings.", "correct": false, "misconception": "Credits the invention to Luther; it predates him by decades" },
+        { "id": "C", "text": "Within a few years, nearly every household owned a printed Bible.", "correct": false, "misconception": "Overstates how fast books and literacy reached ordinary homes" }
+      ],
+      "explanation": "Printing had existed in Europe since the mid-1400s. Reformers used it to produce large numbers of short, cheap texts in local languages, which reached readers faster than authorities could suppress them.",
+      "source": "Demo item"
+    },
+    {
+      "id": "Q4",
+      "topic": "T4.1",
+      "level": "Analyze",
+      "stem": "A simply supported beam carries a single load at mid-span. Where is the bending moment largest?",
+      "options": [
+        { "id": "A", "text": "At the supports.", "correct": false, "misconception": "Confuses where the support reactions act with where bending peaks" },
+        { "id": "B", "text": "It is the same along the whole beam.", "correct": false, "misconception": "Assumes a single point load causes uniform internal effects" },
+        { "id": "C", "text": "At mid-span, under the load.", "correct": true, "misconception": null }
+      ],
+      "explanation": "For a simply supported beam, the bending moment is zero at the supports and rises linearly to a maximum under a central point load.",
+      "source": "Demo item"
+    }
+  ]
+}
+</script>
+
+<script id="quiz-app">
+(function () {
+  "use strict";
+
+  var I18N = {
+    "en": {
+      progress: "Question {n} of {total}", answer: "Your answer", confidence: "How sure are you?",
+      conf: ["guessing", "unsure", "fairly sure", "certain"],
+      check: "Check", next: "Next", finish: "See results",
+      hint: "Keys: the option letter chooses an answer · 1–4 rate confidence · Enter checks or continues",
+      yourAnswer: "your answer", correctAnswer: "correct answer",
+      rightHigh: "Correct — and you knew it.", rightLow: "Correct. You know more than you thought.",
+      notQuite: "Not quite. The answer is {y}.", why: "Why: ",
+      contrast4: "You were certain of {x}; it's {y}.", contrast3: "You were fairly sure of {x}; it's {y}.",
+      tempting: "Why {x} was tempting: ",
+      results: "Your results", score: "You got {c} of {n} right.", matrix: "Confidence × correctness",
+      high: "High confidence (3–4)", low: "Low confidence (1–2)", right: "Correct", wrong: "Wrong",
+      mastered: "mastered", fragile: "fragile", known: "known gap", dangerous: "dangerous gap",
+      dangerTitle: "High-confidence errors", dangerNone: "None. No wrong answers rated 3–4.",
+      dangerItem: "{id} ({topic}): you chose {x} with confidence {c}; the answer is {y}.",
+      calibTitle: "Calibration",
+      calibCertain: "When you rated 4 (certain), you were right {r} of {n}.",
+      calibLow: "When you rated 1–2 (guessing or unsure), you were right {r} of {n}.",
+      calibFew: "A calibration summary needs at least 8 rated items; this quiz has {n}.",
+      forClaude: "Results for Claude", paste: "Paste this into the chat.", copy: "Copy results",
+      copied: "Copied.", selected: "Selected. Press Ctrl+C (or ⌘C) to copy.",
+      errTitle: "This quiz couldn't be loaded",
+      errBody: "The quiz data has a problem. Ask Claude to regenerate the quiz; the details below will help."
+    },
+    "pt-BR": {
+      progress: "Questão {n} de {total}", answer: "Sua resposta", confidence: "Qual é o seu grau de certeza?",
+      conf: ["chute", "dúvida", "quase certeza", "certeza"],
+      check: "Verificar", next: "Próxima", finish: "Ver resultados",
+      hint: "Teclas: a letra da opção escolhe a resposta · 1–4 indicam a certeza · Enter verifica ou avança",
+      yourAnswer: "sua resposta", correctAnswer: "resposta certa",
+      rightHigh: "Correto — e você sabia.", rightLow: "Correto. Você sabe mais do que imaginava.",
+      notQuite: "Não exatamente. A resposta é {y}.", why: "Por quê: ",
+      contrast4: "Você tinha certeza de {x}; a resposta é {y}.", contrast3: "Você tinha quase certeza de {x}; a resposta é {y}.",
+      tempting: "Por que {x} parecia certa: ",
+      results: "Seus resultados", score: "Você acertou {c} de {n}.", matrix: "Certeza × acerto",
+      high: "Alta confiança (3–4)", low: "Baixa confiança (1–2)", right: "Certas", wrong: "Erradas",
+      mastered: "dominado", fragile: "frágil", known: "lacuna conhecida", dangerous: "lacuna perigosa",
+      dangerTitle: "Erros com alta confiança", dangerNone: "Nenhum. Não houve resposta errada com nota 3–4.",
+      dangerItem: "{id} ({topic}): você escolheu {x} com certeza {c}; a resposta é {y}.",
+      calibTitle: "Calibração",
+      calibCertain: "Quando você marcou 4 (certeza), acertou {r} de {n}.",
+      calibLow: "Quando você marcou 1–2 (chute ou dúvida), acertou {r} de {n}.",
+      calibFew: "O resumo de calibração precisa de pelo menos 8 itens; este quiz tem {n}.",
+      forClaude: "Resultados para o Claude", paste: "Cole isto no chat.", copy: "Copiar resultados",
+      copied: "Copiado.", selected: "Texto selecionado. Pressione Ctrl+C (ou ⌘C) para copiar.",
+      errTitle: "Não foi possível carregar este quiz",
+      errBody: "Os dados do quiz têm um problema. Peça ao Claude para gerar o quiz de novo; os detalhes abaixo ajudam."
+    },
+    "es": {
+      progress: "Pregunta {n} de {total}", answer: "Tu respuesta", confidence: "¿Qué grado de seguridad tienes?",
+      conf: ["adivinando", "con dudas", "casi con certeza", "con certeza"],
+      check: "Comprobar", next: "Siguiente", finish: "Ver resultados",
+      hint: "Teclas: la letra de la opción elige la respuesta · 1–4 indican la seguridad · Enter comprueba o avanza",
+      yourAnswer: "tu respuesta", correctAnswer: "respuesta correcta",
+      rightHigh: "Correcto, y lo sabías.", rightLow: "Correcto. Sabes más de lo que creías.",
+      notQuite: "No exactamente. La respuesta es {y}.", why: "Por qué: ",
+      contrast4: "Tenías certeza de {x}; la respuesta es {y}.", contrast3: "Tenías casi certeza de {x}; la respuesta es {y}.",
+      tempting: "Por qué {x} parecía correcta: ",
+      results: "Tus resultados", score: "Acertaste {c} de {n}.", matrix: "Seguridad × acierto",
+      high: "Confianza alta (3–4)", low: "Confianza baja (1–2)", right: "Correctas", wrong: "Incorrectas",
+      mastered: "dominado", fragile: "frágil", known: "laguna conocida", dangerous: "laguna peligrosa",
+      dangerTitle: "Errores con confianza alta", dangerNone: "Ninguno. No hubo respuestas incorrectas con 3–4.",
+      dangerItem: "{id} ({topic}): elegiste {x} con seguridad {c}; la respuesta es {y}.",
+      calibTitle: "Calibración",
+      calibCertain: "Cuando marcaste 4 (con certeza), acertaste {r} de {n}.",
+      calibLow: "Cuando marcaste 1–2 (adivinando o con dudas), acertaste {r} de {n}.",
+      calibFew: "El resumen de calibración necesita al menos 8 preguntas; este quiz tiene {n}.",
+      forClaude: "Resultados para Claude", paste: "Pega esto en el chat.", copy: "Copiar resultados",
+      copied: "Copiado.", selected: "Texto seleccionado. Pulsa Ctrl+C (o ⌘C) para copiar.",
+      errTitle: "No se pudo cargar este quiz",
+      errBody: "Los datos del quiz tienen un problema. Pide a Claude que genere el quiz de nuevo; los detalles de abajo ayudan."
+    }
+  };
+
+  // ---------- pure logic (no DOM; tested by scripts/test-quiz.mjs) ----------
+
+  function fmt(s, vars) {
+    return s.replace(/\{(\w+)\}/g, function (m, k) { return vars && k in vars ? String(vars[k]) : m; });
+  }
+
+  function pickLang(code) {
+    if (typeof code !== "string" || !code) return "en";
+    if (I18N[code]) return code;
+    var base = code.toLowerCase().split("-")[0];
+    if (base === "pt") return "pt-BR";
+    if (I18N[base]) return base;
+    return "en";
+  }
+
+  function isStr(v) { return typeof v === "string" && v.trim() !== ""; }
+
+  function validateQuiz(d) {
+    var errs = [];
+    if (!d || typeof d !== "object" || Array.isArray(d)) return ["The quiz data must be a JSON object."];
+    if (!isStr(d.title)) errs.push("Missing \"title\".");
+    if (!Array.isArray(d.items) || d.items.length === 0) { errs.push("\"items\" must be a non-empty list."); return errs; }
+    var ids = {};
+    d.items.forEach(function (it, i) {
+      var where = "Item " + (i + 1) + (it && isStr(it.id) ? " (" + it.id + ")" : "");
+      if (!it || typeof it !== "object") { errs.push(where + ": must be an object."); return; }
+      ["id", "topic", "level", "stem", "explanation"].forEach(function (k) {
+        if (!isStr(it[k])) errs.push(where + ": missing \"" + k + "\".");
+      });
+      ["id", "topic"].forEach(function (k) {
+        if (isStr(it[k]) && /\s/.test(it[k])) errs.push(where + ": \"" + k + "\" must not contain spaces.");
+      });
+      if (isStr(it.id)) { if (ids[it.id]) errs.push(where + ": duplicate id."); ids[it.id] = true; }
+      if (!Array.isArray(it.options) || it.options.length < 2) { errs.push(where + ": needs at least 2 options."); return; }
+      var optIds = {}, nCorrect = 0;
+      it.options.forEach(function (o, j) {
+        var ow = where + ", option " + (j + 1);
+        if (!o || typeof o !== "object") { errs.push(ow + ": must be an object."); return; }
+        if (!isStr(o.id) || /\s/.test(o.id)) errs.push(ow + ": missing or invalid \"id\".");
+        else if (optIds[o.id]) errs.push(ow + ": duplicate option id."); else optIds[o.id] = true;
+        if (!isStr(o.text)) errs.push(ow + ": missing \"text\".");
+        if (typeof o.correct !== "boolean") errs.push(ow + ": \"correct\" must be true or false.");
+        else if (o.correct) nCorrect++;
+        if (o.misconception != null && typeof o.misconception !== "string") errs.push(ow + ": \"misconception\" must be text or null.");
+      });
+      if (nCorrect !== 1) errs.push(where + ": must have exactly one correct option (found " + nCorrect + ").");
+    });
+    return errs;
+  }
+
+  function correctOption(item) { return item.options.filter(function (o) { return o.correct; })[0]; }
+  function optionById(item, id) { return item.options.filter(function (o) { return o.id === id; })[0]; }
+  function isHigh(conf) { return conf >= 3; }
+
+  function classify(correct, conf) {
+    if (correct) return isHigh(conf) ? "mastered" : "fragile";
+    return isHigh(conf) ? "dangerous" : "known";
+  }
+
+  // answers: array aligned with quiz.items, each { option: "B", confidence: 1..4 }
+  function summarize(quiz, answers) {
+    var s = { total: quiz.items.length, correct: 0,
+      matrix: { mastered: 0, fragile: 0, known: 0, dangerous: 0 },
+      dangerous: [], certain: { right: 0, n: 0 }, low: { right: 0, n: 0 }, enough: quiz.items.length >= 8 };
+    quiz.items.forEach(function (item, i) {
+      var a = answers[i], ok = a.option === correctOption(item).id, cat = classify(ok, a.confidence);
+      if (ok) s.correct++;
+      s.matrix[cat]++;
+      if (cat === "dangerous") s.dangerous.push({ item: item, answer: a });
+      if (a.confidence === 4) { s.certain.n++; if (ok) s.certain.right++; }
+      if (a.confidence <= 2) { s.low.n++; if (ok) s.low.right++; }
+    });
+    return s;
+  }
+
+  function buildResults(quiz, answers) {
+    var lines = ["FINDGAP RESULTS v1", "quiz: " + quiz.title];
+    quiz.items.forEach(function (item, i) {
+      var a = answers[i], ok = a.option === correctOption(item).id;
+      lines.push(item.id + " " + item.topic + " answer=" + a.option + " confidence=" + a.confidence + " correct=" + (ok ? "yes" : "no"));
+    });
+    return lines.join("\n");
+  }
+
+  // Returns { tone: "ok" | "warn", lines: [string] } following question-design.md
+  function feedbackFor(item, answer, t) {
+    var right = correctOption(item), chosen = optionById(item, answer.option);
+    if (answer.option === right.id) {
+      if (isHigh(answer.confidence)) return { tone: "ok", lines: [t.rightHigh] };
+      return { tone: "ok", lines: [t.rightLow, t.why + item.explanation] };
+    }
+    var lines = [];
+    if (isHigh(answer.confidence)) {
+      lines.push(fmt(answer.confidence === 4 ? t.contrast4 : t.contrast3, { x: chosen.id, y: right.id }));
+    } else {
+      lines.push(fmt(t.notQuite, { y: right.id }));
+    }
+    lines.push(right.id + ": " + right.text);
+    lines.push(t.why + item.explanation);
+    if (chosen && chosen.misconception) lines.push(fmt(t.tempting, { x: chosen.id }) + chosen.misconception);
+    return { tone: "warn", lines: lines };
+  }
+
+  var api = { I18N: I18N, fmt: fmt, pickLang: pickLang, validateQuiz: validateQuiz, classify: classify,
+    summarize: summarize, buildResults: buildResults, feedbackFor: feedbackFor };
+  if (typeof globalThis !== "undefined") globalThis.FindgapQuiz = api;
+  if (typeof document === "undefined" || !document.getElementById("app")) return;
+
+  // ---------- UI ----------
+
+  var app = document.getElementById("app"), live = document.getElementById("live");
+  var quiz, t, idx = 0, answers = [], pick = { option: null, confidence: null }, locked = false;
+
+  function el(tag, props, kids) {
+    var n = document.createElement(tag);
+    if (props) Object.keys(props).forEach(function (k) {
+      if (k === "text") n.textContent = props[k];
+      else if (k === "class") n.className = props[k];
+      else if (k.slice(0, 2) === "on") n.addEventListener(k.slice(2), props[k]);
+      else if (props[k] !== false && props[k] != null) n.setAttribute(k, props[k] === true ? "" : props[k]);
+    });
+    (kids || []).forEach(function (c) { if (c) n.appendChild(c); });
+    return n;
+  }
+
+  function announce(msg) { live.textContent = ""; setTimeout(function () { live.textContent = msg; }, 30); }
+
+  function showError(errs, lang) {
+    var tt = I18N[pickLang(lang)];
+    document.documentElement.lang = pickLang(lang);
+    app.textContent = "";
+    app.appendChild(el("div", { class: "card", role: "alert" }, [
+      el("h1", { id: "quiz-title", text: tt.errTitle }),
+      el("p", { text: tt.errBody }),
+      el("ul", null, errs.map(function (e) { return el("li", { text: e }); }))
+    ]));
+  }
+
+  function choice(name, value, label, checked, onPick, extraClass, tag) {
+    var input = el("input", { type: "radio", name: name, value: value, checked: checked, disabled: locked,
+      onchange: function () { onPick(value); } });
+    return el("label", { class: "choice" + (locked ? " locked" : "") + (extraClass ? " " + extraClass : "") },
+      [input, el("span", { text: label }), tag ? el("span", { class: "tag", text: tag }) : null]);
+  }
+
+  function renderItem() {
+    var item = quiz.items[idx], a = answers[idx];
+    app.textContent = "";
+    app.appendChild(el("h1", { id: "quiz-title", text: quiz.title }));
+    app.appendChild(el("p", { class: "progress", text: fmt(t.progress, { n: idx + 1, total: quiz.items.length }) }));
+    var right = correctOption(item);
+    var opts = item.options.map(function (o) {
+      var cls = "", tag = "";
+      if (locked && o.id === right.id) { cls = "is-correct"; tag = "— " + t.correctAnswer; }
+      if (locked && o.id === a.option && o.id !== right.id) { cls = "is-wrong"; tag = "— " + t.yourAnswer; }
+      else if (locked && o.id === a.option) tag = "— " + t.correctAnswer + ", " + t.yourAnswer;
+      return choice("opt", o.id, o.id + ". " + o.text, pick.option === o.id, function (v) { pick.option = v; update(); }, cls, tag);
+    });
+    var confs = [1, 2, 3, 4].map(function (c) {
+      return choice("conf", String(c), c + " " + t.conf[c - 1], pick.confidence === c,
+        function (v) { pick.confidence = Number(v); update(); });
+    });
+    var card = el("div", { class: "card" }, [
+      el("p", { class: "stem", id: "stem", tabindex: "-1", text: item.stem }),
+      el("fieldset", null, [el("legend", { text: t.answer })].concat(opts)),
+      el("fieldset", null, [el("legend", { text: t.confidence }), el("div", { class: "conf" }, confs)])
+    ]);
+    app.appendChild(card);
+    if (locked) {
+      var fb = feedbackFor(item, a, t);
+      app.appendChild(el("div", { class: "feedback " + fb.tone, id: "feedback", tabindex: "-1" },
+        fb.lines.map(function (l) { return el("p", { text: l }); })));
+    }
+    var last = idx === quiz.items.length - 1;
+    var btn = locked
+      ? el("button", { type: "button", id: "go", text: last ? t.finish : t.next, onclick: advance })
+      : el("button", { type: "button", id: "go", text: t.check, disabled: !(pick.option && pick.confidence), onclick: check });
+    app.appendChild(el("div", { class: "actions" }, [btn]));
+    app.appendChild(el("p", { class: "hint", text: t.hint }));
+  }
+
+  function update() {
+    var go = document.getElementById("go");
+    if (go && !locked) go.disabled = !(pick.option && pick.confidence);
+  }
+
+  function check() {
+    if (locked || !pick.option || !pick.confidence) return;
+    answers[idx] = { option: pick.option, confidence: pick.confidence };
+    locked = true;
+    renderItem();
+    var fb = feedbackFor(quiz.items[idx], answers[idx], t);
+    announce(fb.lines.join(" "));
+    document.getElementById("go").focus();
+  }
+
+  function advance() {
+    if (!locked) return;
+    if (idx === quiz.items.length - 1) { renderEnd(); return; }
+    idx++; locked = false; pick = { option: null, confidence: null };
+    renderItem();
+    document.getElementById("stem").focus();
+  }
+
+  function cell(count, label) { return el("td", null, [el("strong", { text: String(count) }), el("small", { text: label })]); }
+
+  function renderEnd() {
+    var s = summarize(quiz, answers), text = buildResults(quiz, answers);
+    app.textContent = "";
+    app.appendChild(el("h1", { id: "quiz-title", text: quiz.title }));
+    var h = el("h2", { id: "end", tabindex: "-1", text: t.results });
+    app.appendChild(el("div", { class: "card" }, [h, el("p", { text: fmt(t.score, { c: s.correct, n: s.total }) }),
+      el("table", null, [
+        el("caption", { class: "visually-hidden", text: t.matrix }),
+        el("thead", null, [el("tr", null, [el("th", { scope: "col", text: t.matrix }), el("th", { scope: "col", text: t.right }), el("th", { scope: "col", text: t.wrong })])]),
+        el("tbody", null, [
+          el("tr", null, [el("th", { scope: "row", text: t.high }), cell(s.matrix.mastered, t.mastered), cell(s.matrix.dangerous, t.dangerous)]),
+          el("tr", null, [el("th", { scope: "row", text: t.low }), cell(s.matrix.fragile, t.fragile), cell(s.matrix.known, t.known)])
+        ])
+      ])]));
+    var dangerList = s.dangerous.length
+      ? el("ul", null, s.dangerous.map(function (d) {
+          return el("li", { text: fmt(t.dangerItem, { id: d.item.id, topic: d.item.topic, x: d.answer.option, c: d.answer.confidence, y: correctOption(d.item).id }) });
+        }))
+      : el("p", { text: t.dangerNone });
+    app.appendChild(el("div", { class: "card" }, [el("h2", { text: t.dangerTitle }), dangerList]));
+    var calib = [];
+    if (!s.enough) calib.push(el("p", { text: fmt(t.calibFew, { n: s.total }) }));
+    else {
+      if (s.certain.n) calib.push(el("p", { text: fmt(t.calibCertain, { r: s.certain.right, n: s.certain.n }) }));
+      if (s.low.n) calib.push(el("p", { text: fmt(t.calibLow, { r: s.low.right, n: s.low.n }) }));
+    }
+    app.appendChild(el("div", { class: "card" }, [el("h2", { text: t.calibTitle })].concat(calib)));
+    var pre = el("pre", { id: "results", tabindex: "0", text: text });
+    var status = el("p", { class: "status", role: "status" });
+    app.appendChild(el("div", { class: "card" }, [el("h2", { text: t.forClaude }), el("p", { text: t.paste }), pre,
+      el("div", { class: "actions" }, [el("button", { type: "button", text: t.copy, onclick: function () { copy(text, pre, status); } }), status])]));
+    announce(fmt(t.score, { c: s.correct, n: s.total }));
+    h.focus();
+  }
+
+  function selectText(node) {
+    var r = document.createRange(); r.selectNodeContents(node);
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+  }
+
+  function copy(text, pre, status) {
+    var done = false;
+    function fallback() {
+      if (done) return;
+      done = true;
+      selectText(pre);
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      status.textContent = ok ? t.copied : t.selected;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      // Some sandboxed frames never settle the promise; fall back after 1 s.
+      setTimeout(fallback, 1000);
+      navigator.clipboard.writeText(text).then(function () {
+        if (!done) { done = true; status.textContent = t.copied; }
+      }, fallback);
+    } else fallback();
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (!quiz || e.ctrlKey || e.metaKey || e.altKey || !document.getElementById("stem")) return;
+    var tag = e.target && e.target.tagName;
+    if (e.key === "Enter") {
+      if (tag === "BUTTON") return;
+      e.preventDefault();
+      if (locked) advance(); else check();
+      return;
+    }
+    if (locked) return;
+    if (/^[1-4]$/.test(e.key)) {
+      pick.confidence = Number(e.key);
+      var c = document.querySelector('input[name="conf"][value="' + e.key + '"]');
+      if (c) { c.checked = true; c.focus(); }
+      update(); e.preventDefault(); return;
+    }
+    var item = quiz.items[idx], key = e.key.toUpperCase();
+    var o = item.options.filter(function (x) { return x.id.toUpperCase() === key; })[0];
+    if (o && e.key.length === 1) {
+      pick.option = o.id;
+      var inputs = document.querySelectorAll('input[name="opt"]');
+      for (var i = 0; i < inputs.length; i++) if (inputs[i].value === o.id) { inputs[i].checked = true; inputs[i].focus(); }
+      update(); e.preventDefault();
+    }
+  });
+
+  var raw = document.getElementById("quiz-data"), data = null, errs;
+  try { data = JSON.parse(raw ? raw.textContent : ""); errs = validateQuiz(data); }
+  catch (e) { errs = ["The quiz data is not valid JSON: " + e.message]; }
+  if (errs.length) { showError(errs, data && data.language); return; }
+  quiz = data;
+  var lang = pickLang(quiz.language);
+  t = I18N[lang];
+  document.documentElement.lang = lang;
+  document.title = quiz.title;
+  renderItem();
+})();
+</script>
 </body>
 </html>
