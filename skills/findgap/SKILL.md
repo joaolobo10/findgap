@@ -40,6 +40,7 @@ Adapt the flow to what the learner already said. Skip any step whose answer you 
 ### 1. Orient
 - Check for existing state first: a `gap-log.md` in the Project files (Claude app) or `.findgap/gap-log.md` in the working directory (Claude Code). If it exists, go to **Review session** (step 7).
 - **Quick check:** if the request is "test me on X now", ask at most two questions (goal and level), then go straight to step 4.
+- **Explain mode:** if the learner wants to check or explain one concept ("explain X like I'm five", "do I really get X?"), skip the map and run rungs 0–3 of the ladder on that concept only. Offer a full diagnosis at the end.
 - Otherwise run a short intake. Ask only what is missing: the goal, the deadline, what "ready" means (the external criterion), and what and how they studied. Ask for their materials. Details: `references/intake.md`.
 
 ### 2. Suggest a home for the context (optional)
@@ -88,6 +89,8 @@ A topic passes the diagnosis at the rung that matches its target level, and is c
 |---|---|---|
 | **Confident** | Mastered → spaced re-test only | **Dangerous gap** → top priority, immediate correction, mandatory delayed re-test |
 | **Unsure** | Fragile → more retrieval practice | Known gap → normal roadmap item |
+
+Confidence uses a 4-point scale: 1 guessing, 2 unsure, 3 fairly sure, 4 certain. Ratings 1–2 count as *Unsure*, 3–4 as *Confident*. A wrong answer rated 4 is the most dangerous gap of all. Details: `references/calibration.md`.
 
 ## Using the learner's materials
 

@@ -16,13 +16,13 @@ How to learn enough about the learner to build a useful knowledge map — withou
 |---|---|---|
 | **Full** | Default for a new learner or a new goal | The fields below, in priority order, across one or two messages |
 | **Quick check** | "Test me on X now", "quiz me on X" | Only: the goal (why they need X) and their level (first contact / studied it / use it regularly). Then start diagnosing. Collect the rest later, only if it becomes relevant. |
-| **Resume** | A learner profile or gap log already exists | Nothing, unless the goal or deadline changed. Confirm in one line ("Last time we were preparing for…; still the plan?") |
+| **Review session** | A learner profile or gap log already exists | Nothing, unless the goal or deadline changed. Confirm in one line ("Last time we were preparing for…; still the plan?") |
 
 ## Fields, in priority order
 
 ### Must have (before building the map)
 
-1. **Topic and scope.** What exactly? "Pharmacology" is too wide for one diagnosis; "cardiovascular drugs for the board exam" is workable. Help narrow it down if needed.
+1. **Topic and scope.** What exactly? "Programming" is too wide for one diagnosis; "state management in React for a junior frontend interview" is workable. Help narrow it down if needed.
 2. **Goal type.** Pick the closest one; it decides what "ready" means (table below).
 3. **The readiness criterion.** The *external* source that defines what must be known. Ask for it by name, link or file.
 4. **Deadline.** A date, or "no deadline". It drives the spacing of re-tests.
@@ -97,6 +97,6 @@ Summarize what you understood in 3–5 lines: topic and scope, goal and criterio
 
 > Sure. Two things first, so the questions hit the right level: is this for an exam, for practice, or for curiosity? And have you studied it before, or is this a first look?
 
-**Resume**
+**Review session**
 
 > Welcome back. Last time we were preparing for the structural engineering licensing exam on March 14, and 4 topics are due for re-testing today. Still the plan? If so, let's start with those — no reviewing first.
