@@ -39,6 +39,10 @@ The skill lives in `skills/findgap/`; everything else in the repo is packaging a
 - Never hardcode content for a specific field. Examples must be generic or show several
   contrasting fields, never a single default domain.
 
+## Release checklist
+- [ ] `grep -n "\[verify" skills/findgap/references/evidence-base.md` returns nothing
+      before tagging v0.1.0 (every number and DOI confirmed against its source).
+
 ## Local testing
 - `~/.claude/skills/findgap` links to `skills/findgap` in this repo; edits are picked up
   in new Claude Code sessions.

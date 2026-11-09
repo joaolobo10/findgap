@@ -28,14 +28,14 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 **What the research says.** Pulling information out of memory strengthens it more than re-reading it. In Roediger & Karpicke (2006), re-studying won on a test 5 minutes later, but testing won clearly after 2 days and 1 week. Re-studying also made students *more confident* while producing worse retention.
 
 **Key numbers.**
-- Rowland (2014): *g* = 0.50 versus restudy (159 effect sizes, 61 studies, mostly lab).
-- Adesope, Trevisan & Sundararajan (2017): *g* ≈ 0.61–0.70 (272 effect sizes, 118 articles). Classroom studies *g* = 0.67, similar to lab.
-- Yang et al. (2021), classroom quizzing only: *g* ≈ 0.50, ≈ 0.43 after publication-bias correction.
-- Multiple-choice practice worked at least as well as recall formats in Adesope et al. Feedback generally increases the benefit.
+- Rowland (2014): *g* = 0.50 **[verify]** versus restudy (159 effect sizes **[verify]**, 61 studies **[verify]**, mostly lab).
+- Adesope, Trevisan & Sundararajan (2017): *g* ≈ 0.61–0.70 **[verify]** (272 effect sizes **[verify]**, 118 articles **[verify]**). Classroom studies *g* = 0.67 **[verify]**, similar to lab.
+- Yang et al. (2021), classroom quizzing only: *g* ≈ 0.50, ≈ 0.43 **[verify]** after publication-bias correction.
+- Multiple-choice practice worked at least as well as recall formats in Adesope et al. **[verify]** Feedback generally increases the benefit.
 
 **How findgap applies it.** Every diagnostic step is a retrieval attempt: closed-book, from memory, before the user sees the answer. Quizzes are learning events, not only measurements.
 
-**Caveats.** Most studies compare testing with re-reading or doing nothing. Against stronger alternatives the advantage is less consistent (Moreira et al., 2019). In mathematics, retrieval versus restudy was not statistically robust (Murray et al., 2025).
+**Caveats.** Most studies compare testing with re-reading or doing nothing. Against stronger alternatives the advantage is less consistent (Moreira et al., 2019). In mathematics, retrieval versus restudy was not statistically robust: *g* = 0.18, with a 95% confidence interval crossing zero (Murray et al., 2025).
 
 ---
 
@@ -54,8 +54,8 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 **What the research says.** Spreading study over separate sessions beats cramming the same amount into one. Cepeda et al. (2006) reviewed 839 assessments from 317 experiments. The best gap between sessions *grows as the time until the test grows*.
 
 **Key numbers.**
-- Latimier, Peyre & Ramus (2021): spaced retrieval beat massed retrieval, *g* = 0.74 (29 studies).
-- Same study: expanding intervals were **not** better than evenly spaced ones (*g* = 0.034).
+- Latimier, Peyre & Ramus (2021): spaced retrieval beat massed retrieval, *g* = 0.74 **[verify]** (29 studies **[verify]**).
+- Same study: expanding intervals were **not** better than evenly spaced ones (*g* = 0.034 **[verify]**).
 - Mathematics specifically: smaller but robust effect, *g* = 0.28 (Murray et al., 2025).
 
 **How findgap applies it.** The roadmap schedules re-tests over days and weeks, with gaps scaled to the user's deadline. Even or expanding schedules are both acceptable. Do not over-engineer the intervals.
@@ -68,9 +68,9 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 
 **What the research says.** Mixing different topics or problem types during practice, instead of doing one block at a time, helps learners tell confusable categories apart. Brunmair & Richter (2019) found a moderate overall effect, *g* = 0.42 (59 studies).
 
-**Key numbers.** Strongest for visually similar categories (paintings, *g* = 0.67). Small for math tasks. The authors advise caution with expository texts and word learning.
+**Key numbers.** Strongest for visually similar categories (paintings, *g* = 0.67). Small for math tasks (*g* = 0.34). For word learning, blocking beat interleaving (*g* = −0.39). The authors advise caution with expository texts and word learning.
 
-**How findgap applies it.** Review sessions mix topics that are easy to confuse (drug classes, design patterns, historical periods). Interleaving is used for review and discrimination, not for a first encounter with dense text.
+**How findgap applies it.** Review sessions mix topics that are easy to confuse (drug classes, design patterns, historical periods). Interleaving is used for review and discrimination, not for a first encounter with dense text. Never interleave for vocabulary or terminology memorization.
 
 **Caveats.** Benefits depend on how similar the categories are. Learners often *feel* they learn less with interleaving even when they learn more.
 
@@ -115,7 +115,7 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 - Confidence is asked *before* the answer is revealed, and never right after the user has just reviewed the material.
 - The confidence × correctness matrix drives the gap report (see `calibration.md`).
 
-**Caveats.** Part of the delayed-judgment benefit comes from the judgment acting as retrieval practice itself, which is fine for findgap's purposes.
+**Caveats.** Delaying the judgment mainly improves its accuracy (*g* = 0.93, Rhodes & Tauber, 2011) with a negligible memory benefit (*g* = 0.08). The authors attribute this to delayed judgments using more diagnostic information from long-term memory, not to retrieval practice. In findgap the delay exists to measure well, not to teach.
 
 ---
 
@@ -146,8 +146,8 @@ Effect sizes use Hedges' *g* or Cohen's *d*. Rough guide: 0.2 small, 0.5 medium,
 
 **What the research says.** Learners move on only after meeting a defined criterion. Below the criterion, they get corrective work and a parallel re-test.
 - Bloom (1984): group mastery learning ≈ 1 SD over conventional teaching. Tutoring plus mastery ≈ 2 SD (the "2 sigma problem").
-- Kulik, Kulik & Bangert-Drowns (1990): 108 controlled evaluations, average effect ≈ 0.52, larger for weaker students.
-- Bloom's typical criterion was 80–90% correct on the unit's formative test.
+- Kulik, Kulik & Bangert-Drowns (1990): 108 controlled evaluations, average effect ≈ 0.52 **[verify]**, larger for weaker students.
+- Bloom's typical criterion was 80–90% correct **[verify]** on the unit's formative test.
 
 **How findgap applies it.** "Ready for X" is criterion-referenced, never a feeling. It requires passing the threshold on the user's knowledge map **and** passing again on a delayed re-test (E3).
 
@@ -234,7 +234,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 
 ## References
 
-> DOIs marked **[verify]** must be confirmed against Crossref before release.
+> All DOIs below were confirmed against Crossref. Numbers in the E-sections that are not yet confirmed against the source carry an inline verify tag; all must be resolved before release.
 
 - Adesope, O. O., Trevisan, D. A., & Sundararajan, N. (2017). Rethinking the use of tests: A meta-analysis of practice testing. *Review of Educational Research, 87*(3), 659–701. https://doi.org/10.3102/0034654316689306
 - Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist, 48*(2), 87–113. https://doi.org/10.1080/00461520.2013.775712
@@ -255,7 +255,7 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Latimier, A., Peyre, H., & Ramus, F. (2021). A meta-analytic review of the benefit of spacing out retrieval practice episodes on retention. *Educational Psychology Review, 33*, 959–987. https://doi.org/10.1007/s10648-020-09572-8
 - Moreira, B. F. T., Pinto, T. S. S., Starling, D. S. V., & Jaeger, A. (2019). Retrieval practice in classroom settings: A review of applied research. *Frontiers in Education, 4*, 5. https://doi.org/10.3389/feduc.2019.00005
 - Murray, E., Horner, A. J., & Göbel, S. M. (2025). A meta-analytic review of the effectiveness of spacing and retrieval practice for mathematics learning. *Educational Psychology Review, 37*, 75. https://doi.org/10.1007/s10648-025-10035-1
-- Nelson, T. O., & Dunlosky, J. (1991). When people's judgments of learning (JOLs) are extremely accurate at predicting subsequent recall: The "delayed-JOL effect." *Psychological Science, 2*, 267–270. https://doi.org/10.1111/j.1467-9280.1991.tb00147.x
+- Nelson, T. O., & Dunlosky, J. (1991). When people's judgments of learning (JOLs) are extremely accurate at predicting subsequent recall: The "delayed-JOL effect." *Psychological Science, 2*(4), 267–271. https://doi.org/10.1111/j.1467-9280.1991.tb00147.x
 - Pashler, H., McDaniel, M., Rohrer, D., & Bjork, R. (2008). Learning styles: Concepts and evidence. *Psychological Science in the Public Interest, 9*(3), 105–119. https://doi.org/10.1111/j.1539-6053.2009.01038.x
 - Rhodes, M. G., & Tauber, S. K. (2011). The influence of delaying judgments of learning on metacognitive accuracy: A meta-analytic review. *Psychological Bulletin, 137*(1), 131–148. https://doi.org/10.1037/a0021705
 - Richland, L. E., Kornell, N., & Kao, L. S. (2009). The pretesting effect: Do unsuccessful retrieval attempts enhance learning? *Journal of Experimental Psychology: Applied, 15*(3), 243–257. https://doi.org/10.1037/a0016496
@@ -263,4 +263,4 @@ The rung where the user stalls identifies the *type* of gap (details in `underst
 - Rowland, C. A. (2014). The effect of testing versus restudy on retention: A meta-analytic review of the testing effect. *Psychological Bulletin, 140*(6), 1432–1463. https://doi.org/10.1037/a0037559
 - Rozenblit, L., & Keil, F. (2002). The misunderstood limits of folk science: An illusion of explanatory depth. *Cognitive Science, 26*(5), 521–562. https://doi.org/10.1207/s15516709cog2605_1
 - Wisniewski, B., Zierer, K., & Hattie, J. (2020). The power of feedback revisited: A meta-analysis of educational feedback research. *Frontiers in Psychology, 10*, 3087. https://doi.org/10.3389/fpsyg.2019.03087
-- Yang, C., Luo, L., Vadillo, M. A., Yu, R., & Shanks, D. R. (2021). Testing (quizzing) boosts classroom learning: A systematic and meta-analytic review. *Psychological Bulletin, 147*(4), 399–435. https://doi.org/10.1037/bul0000309 **[verify bias-corrected g]**
+- Yang, C., Luo, L., Vadillo, M. A., Yu, R., & Shanks, D. R. (2021). Testing (quizzing) boosts classroom learning: A systematic and meta-analytic review. *Psychological Bulletin, 147*(4), 399–435. https://doi.org/10.1037/bul0000309
