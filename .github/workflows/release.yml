@@ -30,6 +30,15 @@ jobs:
           pip install "skills-ref==0.1.1"
           agentskills validate skills/findgap
 
+      - name: Description fits the claude.ai limit (200 characters)
+        run: |
+          len=$(agentskills read-properties skills/findgap | python -c "import json,sys; print(len(json.load(sys.stdin)['description']))")
+          echo "description length: $len"
+          if [ "$len" -gt 200 ]; then
+            echo "::error::SKILL.md description is $len characters; claude.ai allows at most 200"
+            exit 1
+          fi
+
       - name: Release grep (no unconfirmed evidence)
         run: |
           if grep -n "\[verify" skills/findgap/references/evidence-base.md; then

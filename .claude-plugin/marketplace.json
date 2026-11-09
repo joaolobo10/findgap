@@ -1,6 +1,6 @@
 {
   "name": "findgap",
-  "description": "findgap: an evidence-based study skill that finds real knowledge gaps in any field.",
+  "description": "Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study.",
   "owner": {
     "name": "João Carlos Lobo S. Monteiro",
     "url": "https://github.com/joaolobo10"
@@ -9,7 +9,7 @@
     {
       "name": "findgap",
       "source": "./",
-      "description": "Finds real knowledge gaps in any field with confidence-rated quizzes, the Understanding Ladder, a gap report and a spaced re-test roadmap."
+      "description": "Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study."
     }
   ]
 }

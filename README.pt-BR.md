@@ -97,7 +97,7 @@ Skills dependem de um plano e de configurações compatíveis. Veja [Using Skill
 A findgap pode lembrar dos seus gaps e saber o que testar de novo na próxima vez:
 
 - **App do Claude:** crie um Projeto para o seu objetivo. No fim de cada sessão, a findgap entrega o `gap-log.md` atualizado; salve no Projeto.
-- **Claude Code:** a findgap mantém uma pasta `.findgap/` na pasta em que você está trabalhando.
+- **Claude Code:** a findgap pode manter uma pasta `.findgap/` na pasta em que você está trabalhando (ela pergunta antes).
 
 ## Base científica
 

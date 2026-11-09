@@ -18,6 +18,8 @@ The skill lives in `skills/findgap/`; everything else in the repo is packaging a
 - Frontmatter `name` must equal the folder name (`findgap`): lowercase a-z, 0-9 and
   single hyphens, max 64 chars. `description` max 1024 chars and says what the skill does
   and when to use it.
+- `description` must stay ≤ 200 characters (claude.ai upload limit, stricter than the
+  spec's 1024). Keep `.claude-plugin/plugin.json` and `marketplace.json` in sync with it.
 
 ## Evidence
 - Every learning technique referenced anywhere in the skill must be backed by a citation

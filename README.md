@@ -97,7 +97,7 @@ Just talk to Claude, in any language:
 findgap can remember your gaps and know what to re-test next time:
 
 - **Claude app:** create a Project for your goal. At the end of each session, findgap gives you an updated `gap-log.md`; save it to the Project.
-- **Claude Code:** findgap keeps a `.findgap/` folder in your working directory.
+- **Claude Code:** findgap can keep a `.findgap/` folder in your working directory (it asks first).
 
 ## Evidence base
 
@@ -132,6 +132,8 @@ skills/findgap/
     ├── quiz-template.html    # self-contained quiz artifact
     └── learner-profile.md · gap-log.md
 ```
+
+The skill files are written in English, but Claude always replies in your language.
 
 ## Contributing
 

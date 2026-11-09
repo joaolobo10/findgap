@@ -1,6 +1,6 @@
 ---
 name: findgap
-description: Finds real knowledge gaps in any field (tech, health, pharmacy, law, architecture, history, languages, exams, job interviews) using evidence-based learning science. Use when someone wants to know if they truly understand a topic, find what they are missing, prepare for an exam, certification or interview, check whether they are ready for something, get quizzed, explain a concept "like I'm five", or build a study roadmap with spaced review. It interviews the learner, maps what "ready" means, tests understanding from recall up to transfer with confidence ratings, and gives kind but honest feedback.
+description: Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study.
 license: MIT
 metadata:
   author: joaolobo10
