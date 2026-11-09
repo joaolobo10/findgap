@@ -69,7 +69,7 @@ Every rung is judged as one of:
 
 **Pass.** The core causal links hold up. "I'm not sure" on a genuine edge case is acceptable if the core stays intact.
 
-**Then re-rate.** Ask for the 1–4 rating again. A drop of 2 or more points is an *illusion of explanatory depth*: log it, and mention it gently ("This is very common — explaining it in detail is exactly what reveals it").
+**Then re-rate.** Ask for the 1–4 rating again. A drop of 2 or more points signals an *illusion of explanatory depth* (E7; the 2-point threshold is a findgap rule of thumb, not a number from the research): log it, and mention it gently ("This is very common — explaining it in detail is exactly what reveals it").
 
 **Stall means → Surface knowledge.** The words are there, but the causal model is not.
 
@@ -173,21 +173,25 @@ Do not teach the topic in depth here. Deep work belongs in the roadmap.
 | 2 Probe | Surface knowledge | Self-explanation and why-questions on the mechanism (E5, E6) |
 | 3 Analogy | Rigid model | Comparing cases that share the structure (E13) |
 | 4 Apply | Declarative only | Practice problems with corrective feedback (E1, E10) |
-| 5 Discriminate | Doesn't know when | Interleaved practice with confusable cases (E4); misconception contrast (E15) |
-| 6 Transfer | Inert knowledge | Varied practice across contexts and formats (E13, E14) |
+| 5 Discriminate | Doesn't know when | Interleaved practice with confusable cases (E4); name the specific misconception and correct it with explicit feedback (E10, E15) |
+| 6 Transfer | Inert knowledge | Compare two or more cases from different contexts that share the principle, state the principle, then try a new case (E13, E14) |
 | 7 Retain | Not consolidated | Spaced retrieval (E3) |
 
 ## Status assignment
 
 After the ladder on a topic, set its status in the gap log:
 
+**Which confidence counts.** For stalls at rungs 4–7, use the confidence the learner gave for that answer. Rungs 1–3 collect no per-answer confidence, so use the learner's most recent self-rating of the topic: the rung 0 claim, or the re-rating after rung 2 if it happened.
+
 | Result | Status |
 |---|---|
 | Reached the target rung, confidence 3–4, no scaffold | **mastered** (still needs rung 7 to become *confirmed*) |
 | Reached the target rung, but with confidence 1–2 or with a scaffold | **fragile** |
 | Stalled, with confidence 1–2 | **known gap** |
-| Stalled, with confidence 3–4 at the stall or a rung-0 claim of 3–4 | **dangerous gap** |
+| Stalled, with confidence 3–4 | **dangerous gap** |
 | Passed rung 7 | **confirmed** |
+
+If more than one row could apply, the most severe wins: dangerous gap > known gap > fragile > mastered.
 
 Log the highest rung passed, the rung of the stall, the gap type, the last confidence and the status. Also log every wrong answer rated 3–4 as its own row under *Dangerous gaps and errors*, with a re-test date.
 

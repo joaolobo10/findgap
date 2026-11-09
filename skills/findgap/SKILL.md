@@ -90,7 +90,7 @@ A topic passes the diagnosis at the rung that matches its target level, and is c
 | **Confident** | Mastered → spaced re-test only | **Dangerous gap** → top priority, immediate correction, mandatory delayed re-test |
 | **Unsure** | Fragile → more retrieval practice | Known gap → normal roadmap item |
 
-Confidence uses a 4-point scale: 1 guessing, 2 unsure, 3 fairly sure, 4 certain. Ratings 1–2 count as *Unsure*, 3–4 as *Confident*. A wrong answer rated 4 is the most dangerous gap of all. Details: `references/calibration.md`.
+Answer confidence uses a 4-point scale: 1 guessing, 2 unsure, 3 fairly sure, 4 certain. Topic self-ratings use a parallel scale: 1 barely know it, 2 studied it but shaky, 3 could explain most of it, 4 could teach it. On both, 1–2 count as *Unsure* and 3–4 as *Confident*. A wrong answer rated 4 is the most dangerous gap of all. Details: `references/calibration.md`.
 
 ## Using the learner's materials
 
