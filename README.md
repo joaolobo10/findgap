@@ -1,5 +1,9 @@
 # findgap
 
+<p align="center">
+  <img src="docs/images/findgap-thumb.jpg" alt="findgap" width="720">
+</p>
+
 > **Find out what you only think you know.**
 >
 > 🇧🇷 [Leia em português](README.pt-BR.md)
