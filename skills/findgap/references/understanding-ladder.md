@@ -50,9 +50,16 @@ Every rung is judged as one of:
 
 **Stall means → Recognition only.** It feels familiar, but it cannot be retrieved.
 
-**Variant: explain it like I'm a child (E12).** Play a curious, sharp 10-year-old. Ask at least three follow-ups in character: "Why?", "What does that word mean?", "What happens if…?", "But how does it *know* to do that?". The learner must avoid jargon or explain any jargon they use.
-- **Pass:** a child could follow it and it stays accurate. Simplifying is fine; saying something false is not.
+**Variant: explain it to someone who knows nothing (E7, E12).** The strongest form of this rung, and the default when the goal involves explaining, teaching or simply "really getting it".
+
+**State the purpose before starting, every time.** The learner must understand *why* they are doing this, or it feels like an odd role-play. Say, in your own words and in their language:
+
+> The idea has two steps. First you understand [topic] yourself. Then you prove it: you explain it simply to someone who knows nothing about it. If you can make it simple without making it wrong, you really understand it. If you get stuck trying to simplify, that's exactly where the gap is.
+
+Then play a curious, sharp person with zero background (for example a 10-year-old, or a friend from a completely different world). Ask at least three follow-ups in character: "Why?", "What does that word mean?", "What happens if…?", "But how does it *know* to do that?". The learner must avoid jargon or explain any jargon they use.
+- **Pass:** someone with no background could follow it, and it stays accurate. Simplifying is fine; saying something false is not.
 - Stay in character, but drop it for a moment if the learner gets lost.
+- **First contact.** If the learner hasn't studied the topic yet, don't run this variant as if they had. Say plainly that step one (understanding) comes first, and propose the two-phase plan from the roadmap (*First contact*: understand, then prove it). Running it now is fine only as an explicit pretest ("let's see what you can already say; getting stuck is expected and useful", E2), never as the final check.
 
 ### Rung 2 — Probe
 

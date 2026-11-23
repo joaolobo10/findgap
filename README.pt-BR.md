@@ -10,6 +10,8 @@
 
 A findgap é uma [Agent Skill](https://agentskills.io) open source que transforma o Claude num parceiro de estudo que encontra os seus gaps de conhecimento reais, inclusive os que você nem sabe que tem. Funciona em qualquer área: farmacologia, React, engenharia estrutural, direito constitucional, história do Brasil, teoria musical.
 
+Ela também ajuda com uma preocupação mais nova: **você está deixando a IA pensar por você?** O *Thinking check* compara o que você acha que ainda consegue fazer sozinho com o que você realmente faz sem IA, tarefa por tarefa, e ajuda você a manter as habilidades que precisa dominar.
+
 Ela não pergunta só "o que você quer revisar?". Ela faz uma entrevista curta, mapeia o que *estar pronto* significa para o seu objetivo, testa o seu entendimento desde lembrar até transferir para casos novos, pergunta o quanto você tem certeza antes de cada resposta e entrega um relatório honesto e gentil, com um plano. Tudo baseado em [pesquisa de ciência da aprendizagem](skills/findgap/references/evidence-base.md).
 
 ## Como funciona
@@ -18,7 +20,7 @@ Ela não pergunta só "o que você quer revisar?". Ela faz uma entrevista curta,
 Entrevista → Mapa de conhecimento → Quiz (amplitude) → Escada de compreensão (profundidade) → Relatório → Roadmap → Retestes espaçados
 ```
 
-1. **Entrevista.** Poucas perguntas, bem direcionadas: para que você está se preparando, até quando, o que define "pronto" (um edital, o conteúdo de uma prova, a descrição de uma vaga) e por onde você estudou. Se você compartilhar o seu material, ela compara com o que é exigido.
+1. **Entrevista.** Começa com uma pergunta aberta: o que te trouxe aqui hoje? Um assunto para dominar, a sensação de não estar pensando com clareza, dificuldade em tarefas, depender demais da IA: tudo vale, e você pode trazer mais de uma coisa. Depois, poucas perguntas, bem direcionadas: para que você está se preparando, até quando, o que define "pronto" (um edital, o conteúdo de uma prova, a descrição de uma vaga) e por onde você estudou. Se você compartilhar o seu material, ela compara com o que é exigido.
 2. **Mapa de conhecimento.** Uma árvore curta de tópicos, cada um com peso e profundidade exigida. Você confirma antes de qualquer teste.
 3. **Quiz.** Um quiz com nota de confiança cobrindo o mapa todo, entregue como artefato interativo. Cada alternativa errada corresponde a um erro conceitual específico ou a um engano plausível, então o seu erro mostra *por que* você errou.
 4. **A Escada de Compreensão.** Nos tópicos prioritários, a findgap sobe degrau por degrau. O degrau onde você trava diz que tipo de gap é:
@@ -26,7 +28,7 @@ Entrevista → Mapa de conhecimento → Quiz (amplitude) → Escada de compreens
 | # | Degrau | Você precisa… | Travar aqui significa… |
 |---|---|---|---|
 | 0 | Afirmar | Dar uma nota para o quanto sabe | — (ponto de partida) |
-| 1 | Explicar | Explicar de memória (ou para uma criança curiosa de 10 anos) | Você reconhece, mas não consegue lembrar |
+| 1 | Explicar | Explicar de memória, ou de forma simples para alguém que não sabe nada (se você não consegue simplificar sem errar, ainda não conhece a fundo) | Você reconhece, mas não consegue lembrar |
 | 2 | Investigar | Responder perguntas de por quê e como | Palavras sem entender o mecanismo |
 | 3 | Analogia | Ligar a algo do dia a dia e dizer onde a analogia falha | Entendimento preso a um único formato |
 | 4 | Aplicar | Resolver um problema conhecido | Você sabe *sobre*, mas não sabe *fazer* |
@@ -37,6 +39,18 @@ Entrevista → Mapa de conhecimento → Quiz (amplitude) → Escada de compreens
 5. **Confiança × acerto.** Uma resposta errada da qual você tinha *certeza* é o gap mais perigoso de todos. Por isso a findgap marca esse erro, corrige na hora e sempre testa de novo depois.
 6. **Relatório e veredito.** Primeiro os gaps perigosos, depois a situação de cada tópico em linguagem simples e o quanto você se avaliou bem. "Estou pronto?" recebe um veredito calculado a partir do critério (*Ainda não / Perto / Pronto (provisório) / Pronto (confirmado)*), nunca uma impressão.
 7. **Roadmap.** Uma atividade concreta para cada gap, escolhida para aquele tipo de gap, e um calendário de retestes ajustado ao seu prazo.
+
+### Thinking check: estou terceirizando o meu pensamento?
+
+Para quem sente que a IA está pensando demais no seu lugar:
+
+1. **Mapa de uso.** O que você entrega para a IA e, em cada tarefa: você precisa dominar isso? O quanto conseguiria fazer sozinho hoje?
+2. **Teste desplugado.** Uma ou duas tarefas que você precisa dominar, feitas (ou explicadas) sem IA.
+3. **Teste de julgamento.** Uma resposta no estilo de IA com um erro plantado: você teria usado?
+4. **Mapa de dependência.** Por tarefa: *domina*, *frágil*, *muleta*, *ilusão* (achava que conseguia, mas não conseguiu), *confiança cega* ou *delegação saudável*.
+5. **Plano.** Tentar antes, pedir dicas em vez de respostas para a IA, explicar com as suas palavras o que ela gerou e testar de novo sem IA em outros dias.
+
+Não é um diagnóstico e nunca diz que a IA está "apodrecendo o seu cérebro". Mostra evidências, tarefa por tarefa, e você decide.
 
 **O tom:** um professor de reforço gentil, que nunca deixa um erro passar. Todo erro é apontado, com clareza, sem fazer você se sentir burro. Quer mais duro? Peça o *modo banca*.
 
@@ -87,12 +101,14 @@ Skills dependem de um plano e de configurações compatíveis. Veja [Using Skill
 - *"Explícame la carga de viento como si tuviera cinco años, y dime si de verdad lo entiendo."*
 - *"Estou pronto para uma entrevista de backend júnior? Aqui está a vaga."*
 - *"Me sabatina em direito constitucional, modo banca."*
+- *"Sinto que não consigo fazer mais nada sem o ChatGPT. Dá para checar?"*
 
 | Modo | Quando |
 |---|---|
 | **Diagnóstico completo** | Padrão: entrevista, mapa, quiz, escada, relatório, roadmap |
 | **Teste rápido** | "Me testa agora em X": no máximo duas perguntas, e começa o teste |
 | **Explicar** | Um conceito só, degraus 0 a 3 |
+| **Thinking check** | Você se preocupa em depender da IA: mapa de uso, testes sem IA, mapa de dependência, plano |
 | **Sessão de revisão** | Você volta: primeiro os retestes do dia, sem revisar antes |
 | **Modo banca** | Mesmo diagnóstico, com tom de banca examinadora |
 
@@ -113,6 +129,7 @@ Toda técnica que a findgap usa tem pesquisa por trás e está documentada, com 
 - **A ilusão de profundidade explicativa:** a gente acha que entende até tentar explicar (Rozenblit & Keil, 2002).
 - **Hipercorreção:** erros confiantes são os mais fáceis de corrigir, e também os que mais voltam (Butterfield & Metcalfe, 2001; Butler et al., 2011).
 - **Mastery learning:** estar pronto é um critério, não uma sensação (Bloom, 1984; Kulik et al., 1990).
+- **IA como muleta:** alunos com acesso livre à IA foram melhor durante a prática, mas pior quando ela foi retirada (Bastani et al., 2025); delegar ajuda na hora, mas pode custar memória (Grinschgl et al., 2021).
 
 O que a findgap **não** faz, de propósito: adaptar o ensino a "estilos de aprendizagem" (Pashler et al., 2008), mandar reler ou grifar, ou usar "você se sente pronto?" como medida.
 
@@ -131,7 +148,8 @@ skills/findgap/
 │   ├── evidence-base.md      # a pesquisa, com DOIs
 │   ├── intake.md · knowledge-map.md · understanding-ladder.md
 │   ├── question-design.md · calibration.md
-│   └── gap-report.md · readiness-rubric.md · roadmap.md
+│   ├── gap-report.md · readiness-rubric.md · roadmap.md
+│   └── thinking-check.md     # o check de dependência de IA
 └── assets/
     ├── quiz-template.html    # quiz em artefato, num único arquivo
     └── learner-profile.md · gap-log.md

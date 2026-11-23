@@ -41,6 +41,15 @@ Each gap type gets the technique the evidence supports for it. Describe the acti
 
 **Never prescribe** re-reading, highlighting or "review your notes" as the activity, or anything on the "Do not use" list.
 
+## First contact: understand first, then prove it
+
+When the learner has never studied a topic (background: *first contact*), there is nothing to diagnose yet. Don't skip straight to "explain it to a friend". Tell the learner the plan has two phases, and why:
+
+1. **Understand.** The learner studies the core ideas from a source they choose (or one Claude suggests and they verify). Every study block ends with retrieval: close the source, write down what they remember, then check and correct it (E1). Claude may give short first explanations, each followed straight away by the learner explaining it back (see *Corrective sessions* below).
+2. **Prove it.** Once the ideas hold up from memory, the learner explains them simply to someone with no background, using the *someone who knows nothing* variant of rung 1 of the Understanding Ladder, followed by probing (rung 2). This is the check. Being able to make an idea simple without making it wrong shows real understanding (E7, E12).
+
+Show both phases in the plan table, with phase 2 on a later day than phase 1, so the explanation comes from memory and not from what was just read (E3, E8).
+
 ## Corrective sessions: when findgap explains
 
 The learner may want Claude to explain a gap, not just assign work. That's fine, as long as the explanation is short and followed straight away by retrieval:

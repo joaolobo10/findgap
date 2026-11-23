@@ -1,6 +1,6 @@
 {
   "name": "findgap",
-  "description": "Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study.",
+  "description": "Finds knowledge gaps and AI over-reliance in any field. Use to check if you really know a topic or can think without AI, get quizzed, explain simply, prep for an exam or interview, or plan study.",
   "owner": {
     "name": "João Carlos Lobo S. Monteiro",
     "url": "https://github.com/joaolobo10"
@@ -9,7 +9,7 @@
     {
       "name": "findgap",
       "source": "./",
-      "description": "Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study."
+      "description": "Finds knowledge gaps and AI over-reliance in any field. Use to check if you really know a topic or can think without AI, get quizzed, explain simply, prep for an exam or interview, or plan study."
     }
   ]
 }

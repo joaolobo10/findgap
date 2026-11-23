@@ -10,6 +10,8 @@
 
 findgap is an open-source [Agent Skill](https://agentskills.io) that turns Claude into a study partner who finds your real knowledge gaps — including the ones you don't know you have. It works for any field: pharmacology, React, structural engineering, constitutional law, Brazilian history, music theory.
 
+It also helps with a newer worry: **are you letting AI do your thinking for you?** The *Thinking check* compares what you believe you can still do on your own with what you actually do without AI, task by task, and helps you keep the skills you need to own.
+
 It doesn't just ask "what do you want to review?". It interviews you, maps what *ready* actually means for your goal, tests your understanding from recall up to transfer, asks how sure you are before every answer, and gives you an honest, kind report and a plan — all grounded in [learning-science research](skills/findgap/references/evidence-base.md).
 
 ## How it works
@@ -18,7 +20,7 @@ It doesn't just ask "what do you want to review?". It interviews you, maps what 
 Intake → Knowledge map → Quiz (breadth) → Understanding Ladder (depth) → Gap report → Roadmap → Spaced re-tests
 ```
 
-1. **Intake.** A few targeted questions: what you're preparing for, by when, what defines "ready" (a syllabus, an exam blueprint, a job description) and what you studied from. Share your materials and it compares them against the requirement.
+1. **Intake.** It starts with one open question: what brought you here today? A subject to master, the feeling you're not thinking as clearly, trouble with tasks, leaning on AI too much: anything counts, and you can bring more than one. Then a few targeted questions: what you're preparing for, by when, what defines "ready" (a syllabus, an exam blueprint, a job description) and what you studied from. Share your materials and it compares them against the requirement.
 2. **Knowledge map.** A short tree of topics, each with a weight and a target depth. You confirm it before any testing.
 3. **Quiz.** A confidence-rated quiz across the map, delivered as an interactive artifact. Every wrong option corresponds to a specific misconception or plausible error, so your mistakes say *why* you got it wrong.
 4. **The Understanding Ladder.** For priority topics, findgap climbs rung by rung. The rung where you stall tells you what kind of gap it is:
@@ -26,7 +28,7 @@ Intake → Knowledge map → Quiz (breadth) → Understanding Ladder (depth) →
 | # | Rung | You're asked to… | Stalling here means… |
 |---|---|---|---|
 | 0 | Claim | Rate how well you know it | — (baseline) |
-| 1 | Explain | Explain it from memory (or to a curious 10-year-old) | You recognize it, but can't retrieve it |
+| 1 | Explain | Explain it from memory, or simply to someone who knows nothing (if you can't make it simple without making it wrong, you don't know it deeply yet) | You recognize it, but can't retrieve it |
 | 2 | Probe | Answer why/how follow-ups | Words without a causal model |
 | 3 | Analogy | Map it to everyday life, then say where the analogy breaks | Understanding tied to one framing |
 | 4 | Apply | Solve a familiar problem | You know *about* it, but can't *do* it |
@@ -37,6 +39,18 @@ Intake → Knowledge map → Quiz (breadth) → Understanding Ladder (depth) →
 5. **Confidence × correctness.** A wrong answer you were *certain* about is the most dangerous gap of all, so findgap flags it, corrects it right away and always re-tests it later.
 6. **Gap report and verdict.** Dangerous gaps first, then plain-language status per topic and how well you judged yourself. "Am I ready?" gets a criterion-based verdict (*Not yet / Close / Ready (provisional) / Ready (confirmed)*), never a feeling.
 7. **Roadmap.** One concrete activity per gap, chosen for that type of gap, plus a re-test calendar scaled to your deadline.
+
+### Thinking check: am I outsourcing my thinking?
+
+For anyone who feels AI is doing too much of their thinking:
+
+1. **Use map.** What you hand to AI, and for each task: do you need to own it, and how well could you do it alone today?
+2. **Unplugged test.** One or two tasks you need to own, done (or explained) without AI.
+3. **Judgment test.** An AI-style answer with one planted error: would you have used it?
+4. **Reliance map.** Per task: *owned*, *fragile*, *crutch*, *illusion* (you thought you could, but couldn't), *blind trust*, or *healthy offloading*.
+5. **Plan.** Try first, ask AI for hints instead of answers, explain back what it gave you, and re-test without AI on later days.
+
+It is not a diagnosis and it never tells you AI is "rotting your brain". It shows evidence, task by task, and you decide.
 
 **The voice:** a kind tutor who never lets an error slide. Every mistake is pointed out, clearly, without making you feel dumb. Want it harsher? Ask for *exam-board mode*.
 
@@ -87,12 +101,14 @@ Just talk to Claude, in any language:
 - *"Explícame la carga de viento como si tuviera cinco años, y dime si de verdad lo entiendo."*
 - *"Am I ready for a junior backend interview? Here's the job description."*
 - *"Grill me on constitutional law — exam-board mode."*
+- *"I feel like I can't do anything without ChatGPT anymore. Can you check?"*
 
 | Mode | When |
 |---|---|
 | **Full diagnosis** | Default: intake, map, quiz, ladder, report, roadmap |
 | **Quick check** | "Test me on X now": at most two questions, then straight to testing |
 | **Explain** | One concept, rungs 0–3 |
+| **Thinking check** | You worry about relying on AI: use map, tests without AI, reliance map, plan |
 | **Review session** | You come back: due re-tests first, no reviewing beforehand |
 | **Exam-board mode** | Same diagnosis, strict-examiner tone |
 
@@ -113,6 +129,7 @@ Every technique findgap uses is backed by research and documented — with effec
 - **The illusion of explanatory depth:** we think we understand until we try to explain (Rozenblit & Keil, 2002).
 - **Hypercorrection:** confident errors are the most correctable, and the most likely to return (Butterfield & Metcalfe, 2001; Butler et al., 2011).
 - **Mastery learning:** readiness is a criterion, not a feeling (Bloom, 1984; Kulik et al., 1990).
+- **AI as a crutch:** students with unguarded AI access did better during practice but worse once it was removed (Bastani et al., 2025); offloading helps now but can cost memory (Grinschgl et al., 2021).
 
 What findgap deliberately does **not** do: adapt to "learning styles" (Pashler et al., 2008), prescribe re-reading or highlighting, or use "do you feel ready?" as a measure.
 
@@ -131,7 +148,8 @@ skills/findgap/
 │   ├── evidence-base.md      # the research, with DOIs
 │   ├── intake.md · knowledge-map.md · understanding-ladder.md
 │   ├── question-design.md · calibration.md
-│   └── gap-report.md · readiness-rubric.md · roadmap.md
+│   ├── gap-report.md · readiness-rubric.md · roadmap.md
+│   └── thinking-check.md     # the AI-reliance check
 └── assets/
     ├── quiz-template.html    # self-contained quiz artifact
     └── learner-profile.md · gap-log.md

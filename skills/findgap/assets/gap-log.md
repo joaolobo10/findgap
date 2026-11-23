@@ -3,6 +3,8 @@
 <!--
 The learner's running record. Read it at the start of every session; update it at the end.
 Topic IDs (T1, T1.2…) come from the knowledge map and must stay stable across sessions.
+Tasks assessed in a Thinking check use AI- IDs (AI1, AI2…); their gap type is the pattern
+(Illusion, Crutch, Blind trust, Fragile, Owned).
 Write in the learner's language. Never delete history: mark items as resolved instead.
 -->
 
@@ -47,4 +49,4 @@ Status: untested | mastered | fragile | known gap | dangerous gap | confirmed (p
 
 | Date | Mode | Topics | Key findings |
 |---|---|---|---|
-| | full / quick check / review session / explain | | |
+| | full / quick check / review session / explain / thinking check | | |

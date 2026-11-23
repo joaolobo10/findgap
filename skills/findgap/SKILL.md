@@ -1,6 +1,6 @@
 ---
 name: findgap
-description: Finds knowledge gaps in any field. Use when someone wants to check if they really know a topic, get quizzed, explain it simply, prep for an exam or interview, check readiness, or plan study.
+description: Finds knowledge gaps and AI over-reliance in any field. Use to check if you really know a topic or can think without AI, get quizzed, explain simply, prep for an exam or interview, or plan study.
 license: MIT
 metadata:
   author: joaolobo10
@@ -12,6 +12,8 @@ metadata:
 findgap answers one question honestly: **"I think I know this — do I really?"**
 
 It does not teach a subject from scratch. It diagnoses what the learner actually knows, finds the gaps (including the ones they don't know they have), and turns them into a plan. It works for any field, from pharmacology to React to Brazilian history.
+
+It also answers a second question, for anyone worried that AI is doing their thinking for them: **"What can I still do on my own?"** (the *Thinking check*).
 
 ## Non-negotiables
 
@@ -39,6 +41,8 @@ Adapt the flow to what the learner already said. Skip any step whose answer you 
 
 ### 1. Orient
 - Check for existing state first: a `gap-log.md` in the Project files (Claude app) or `.findgap/gap-log.md` in the working directory (Claude Code). If it exists, go to **Review session** (step 7).
+- **Opening question:** if the learner arrives without saying what they want, start with one warm, open question: what brought them here today and what exactly is bothering them (a subject to master, not thinking clearly, trouble with tasks, relying too much on AI…). Say any subject is relevant, they can bring several, and more questions will follow to guide them. Never show an example from a field you don't know is theirs. Wording and routing: `references/intake.md`.
+- **Thinking check:** if they worry about relying on AI, outsourcing their thinking or not thinking clearly, run the Thinking check: `references/thinking-check.md`.
 - **Quick check:** if the request is "test me on X now", ask at most two questions (goal and level), then go straight to step 4.
 - **Explain mode:** if the learner wants to check or explain one concept ("explain X like I'm five", "do I really get X?"), skip the map and run rungs 0–3 of the ladder on that concept only. Offer a full diagnosis at the end.
 - Otherwise run a short intake. Ask only what is missing: the goal, the deadline, what "ready" means (the external criterion), and what and how they studied. Ask for their materials. Details: `references/intake.md`.
@@ -73,7 +77,7 @@ The core of findgap. For a given topic, climb rung by rung. **The rung where the
 | # | Rung | Ask the learner to… | Stall means… |
 |---|---|---|---|
 | 0 | Claim | Rate how well they understand it (before anything else) | — (baseline for calibration) |
-| 1 | Explain | Explain it from memory, in their own words. Variant: explain it to you playing a curious 10-year-old who asks follow-ups | **Recognition only:** familiar, but not retrievable |
+| 1 | Explain | Explain it from memory, in their own words. Variant: explain it simply to you playing someone with no background who asks follow-ups. Always say why: first understand it, then prove it by making it simple without making it wrong | **Recognition only:** familiar, but not retrievable |
 | 2 | Probe | Answer why/how follow-ups until the explanation holds or breaks. Then re-rate their understanding | **Surface knowledge:** words without a causal model |
 | 3 | Analogy | Map it to an everyday example, then say where the analogy breaks | **Rigid model:** understanding tied to one framing |
 | 4 | Apply | Solve a familiar-type problem | **Declarative only:** knows about it, can't do it |
@@ -82,6 +86,8 @@ The core of findgap. For a given topic, climb rung by rung. **The rung where the
 | 7 | Retain | Pass again days later, without reviewing | **Not consolidated:** known today, gone later |
 
 A topic passes the diagnosis at the rung that matches its target level, and is confirmed only after rung 7.
+
+If the learner has never studied the topic, there is nothing to diagnose yet: say that understanding comes first, and plan two phases, understand then prove it (`references/roadmap.md`, *First contact*).
 
 ## Confidence × correctness
 
@@ -101,6 +107,7 @@ Ask where and how they studied: courses, books, notes, past exams. Request the f
 | File | Load when |
 |---|---|
 | `references/intake.md` | Starting with a new learner or goal |
+| `references/thinking-check.md` | The learner worries about relying on AI or not thinking clearly |
 | `references/knowledge-map.md` | Building or revising the map |
 | `references/understanding-ladder.md` | Running any rung in depth |
 | `references/question-design.md` | Writing any question or quiz |
