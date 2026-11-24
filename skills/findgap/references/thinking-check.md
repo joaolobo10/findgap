@@ -19,7 +19,7 @@ It is not a diagnosis of dependence, a clinical test or a lecture about AI. It i
 - The learner asks directly ("am I too dependent on AI?", "check if I can still think without ChatGPT").
 - During a regular diagnosis, the learner says they studied or worked mainly by asking AI. Offer the check after the gap report; don't switch modes mid-diagnosis.
 
-If they also have a knowledge goal, ask which comes first. The two connect: a task marked "must own" here can become a topic on the knowledge map.
+If they also have a knowledge goal, ask which comes first. If they don't choose, say which one you'll start with and why, and that they can switch at any time. The two connect: a task marked "must own" here can become a topic on the knowledge map.
 
 ## Step 1 — Use map
 
@@ -53,6 +53,12 @@ Run **one** of these formats, chosen to fit the task:
 
 - **Small version, now.** A 5–10 minute version of the real task, done in the chat without AI help: draft the opening of the text, outline the plan, make the decision with the reasons, solve one problem. Collect confidence (1–4) before giving feedback.
 - **Explain your own AI-assisted work.** Ask for something recent they produced with AI. Then, without looking at it again: "What were the main choices in it, and why those and not others?" "What would you change if [one condition changed]?" "Which part would you have the most trouble redoing alone?" This uses rungs 1–2 of the ladder on their own work.
+
+Choosing and sizing the task:
+- **Build it from their real task.** Before writing a small version, ask for one concrete, recent instance of the task they hand to AI: what they asked and in what context. Invent a task only if they can't give one, and keep it to the kind of work they described.
+- **Test one thing at a time.** Use only content the learner has already studied. Never set the task in a topic that is still *first contact* for them: a stall would mix two gaps (the skill and the new topic), and the result would show neither. The new topic belongs in a knowledge diagnosis or the roadmap's *First contact* plan.
+- **Size it to the claim.** With a claim of 1–2, start with the smallest version that is still the real task, and offer one step up if they pass. With a claim of 3–4, use a full-size version.
+- **Say what it takes.** In one line, name what the task requires, in terms of what the learner said they already know, so the level is clear and the task doesn't feel like a sudden jump.
 
 Rules:
 - Make it clear that this is a check, not an exam: "No AI for this one. It's how we see what's really yours."
