@@ -56,13 +56,35 @@ It is not a diagnosis and it never tells you AI is "rotting your brain". It show
 
 ## Install
 
+findgap is updated often. Pick an install method that keeps up with it: every option below says how you get new versions.
+
 ### Claude Code and other agents (Cursor, Codex, OpenCode…)
 
 ```bash
 npx skills add joaolobo10/findgap
 ```
 
-Or copy `skills/findgap/` into `~/.claude/skills/findgap/` (personal) or `.claude/skills/findgap/` (one project).
+To get updates later, run `npx skills update`.
+
+#### Always the latest: clone and link
+
+Clone the repo once and link the skill folder into your agent's skills directory. After that, one `git pull` brings in every change:
+
+```bash
+git clone https://github.com/joaolobo10/findgap.git ~/findgap
+ln -s ~/findgap/skills/findgap ~/.claude/skills/findgap
+```
+
+On Windows (PowerShell):
+
+```powershell
+git clone https://github.com/joaolobo10/findgap.git "$HOME\findgap"
+New-Item -ItemType Junction -Path "$HOME\.claude\skills\findgap" -Target "$HOME\findgap\skills\findgap"
+```
+
+To update, run `git pull` inside `~/findgap`, then start a new session (skills load when a session starts). This follows the `main` branch, so you get changes as soon as they land, before they're tagged as a release.
+
+You can also just copy `skills/findgap/` into `~/.claude/skills/findgap/` (personal) or `.claude/skills/findgap/` (one project). A copy never updates itself: to get a new version, copy the folder again.
 
 ### Claude Code plugin marketplace
 
@@ -84,11 +106,15 @@ claude plugin install findgap@findgap
 
 Installed as a plugin, the skill is namespaced as `findgap:findgap`. You don't need to call it by name: just ask, as in the examples below.
 
+To get updates, run `claude plugin marketplace update findgap`, or turn on auto-update for this marketplace in `/plugin` → **Marketplaces** (third-party marketplaces don't auto-update by default).
+
 ### Claude desktop and claude.ai
 
 1. Download `findgap.zip` from the [latest release](https://github.com/joaolobo10/findgap/releases/latest).
 2. In Claude, go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and choose the ZIP.
 3. Make sure the skill is toggled on.
+
+**The ZIP does not update itself.** An uploaded skill stays at the version you uploaded. To get new versions, follow this repo: on GitHub, click **Watch → Custom → Releases** to get notified when a release comes out. Then download the new `findgap.zip`, remove the old findgap skill in **Customize → Skills**, and upload the new one.
 
 Skills require a plan and settings that support them. See [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
