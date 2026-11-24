@@ -1,7 +1,7 @@
 # findgap
 
 <p align="center">
-  <img src="docs/images/findgap-thumb.jpg" alt="findgap" width="720">
+  <img src="docs/images/findgap-banner.jpg" alt="findgap" width="720">
 </p>
 
 > **Descubra o que você só acha que sabe.**
