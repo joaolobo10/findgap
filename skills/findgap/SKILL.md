@@ -4,7 +4,7 @@ description: Finds knowledge gaps and AI over-reliance in any field. Use to chec
 license: MIT
 metadata:
   author: joaolobo10
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # findgap
